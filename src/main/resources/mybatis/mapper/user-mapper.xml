@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="User">
+
+    <resultMap id="UserMap" type="UserDTO">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="pwd" column="pwd" />
+        <result property="type" column="type" />
+        <result property="nickName" column="nick_name" />
+        <result property="mobile" column="mobile" />
+        <result property="email" column="email" />
+        <result property="sex" column="sex" />
+        <result property="birthday" column="birthday" />
+        <result property="picUrl" column="pic_url" />
+        <result property="lastLoginTime" column="last_login_time" />
+        <result property="createdAt" column="created_at" />
+        <result property="createdBy" column="created_by" />
+        <result property="updatedAt" column="updated_at" />
+        <result property="updatedBy" column="updated_by" />
+    </resultMap>
+
+    <select id="selectById" parameterType="Long" resultMap="UserMap" fetchSize="1">
+        SELECT * FROM t_user WHERE id=#{id}
+    </select>
+
+    <select id="countByCnd" resultType="int">
+        SELECT COUNT(*) FROM t_user WHERE type=#{type}
+    </select>
+</mapper>
+
+

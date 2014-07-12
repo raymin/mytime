@@ -1,0 +1,41 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="'com.mydate':91date">
+    <output-path>$PROJECT_DIR$/out/artifacts/_com_mydate__91date</output-path>
+    <root id="archive" name="_com.mydate__91date.war">
+      <element id="javaee-facet-resources" facet="91date/web/Web Gradle" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="91date" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: velocity-1.7" />
+          <element id="library" level="project" name="Gradle: commons-collections-3.2.1" />
+          <element id="library" level="project" name="Gradle: commons-lang-2.4" />
+          <element id="library" level="project" name="Gradle: aopalliance-1.0" />
+          <element id="library" level="project" name="Gradle: spring-core-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-tx-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-jdbc-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-orm-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-web-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-webmvc-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-context-support-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: mybatis-3.2.7" />
+          <element id="library" level="project" name="Gradle: mybatis-spring-1.2.2" />
+          <element id="library" level="project" name="Gradle: commons-dbcp-1.4" />
+          <element id="library" level="project" name="Gradle: mysql-connector-java-5.1.31" />
+          <element id="library" level="project" name="Gradle: lucene-core-4.9.0" />
+          <element id="library" level="project" name="Gradle: spring-asm-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-logging-1.1.1" />
+          <element id="library" level="project" name="Gradle: spring-beans-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-aop-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-expression-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: spring-context-3.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-pool-1.5.4" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/_com_mydate__91date/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

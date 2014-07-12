@@ -1,0 +1,52 @@
+package com.mytime.model.dao;
+
+
+import org.mybatis.spring.SqlSessionTemplate;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Dao基类
+ */
+public abstract class BaseDao {
+
+    @Resource
+    protected SqlSessionTemplate sqlSessionTemplate;
+
+    public Object queryOne(String sqlId, Object object) {
+        return sqlSessionTemplate.selectOne(sqlId, object);
+    }
+
+    public Object queryOne(String sqlId, Map<String, Object> _params) {
+        return sqlSessionTemplate.selectOne(sqlId, _params);
+    }
+
+    public <T> List<T> queryList(String sqlId, Map<String, Object> _params) {
+        return sqlSessionTemplate.selectList(sqlId, _params);
+    }
+
+    public <T> List<T> queryList(String sqlId, Object _params) {
+        return sqlSessionTemplate.selectList(sqlId, _params);
+    }
+
+    public <T> int insert(String sqlId, T obj) {
+        return sqlSessionTemplate.insert(sqlId, obj);
+    }
+
+    public <T> int update(String sqlId, T obj) {
+        return sqlSessionTemplate.update(sqlId, obj);
+    }
+
+    protected Map<Object, Object> buildCndMap(Object... conditions) {
+
+        Map<Object, Object> cndMap = new HashMap<Object, Object>();
+        for (int i = 0; i < conditions.length; i += 2) {
+            cndMap.put(conditions[i], conditions[i + 1]);
+        }
+        return cndMap;
+    }
+
+}
