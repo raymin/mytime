@@ -1,4 +1,4 @@
-drop TABLE if exists t_user;
+/*drop TABLE if exists t_user;*/
 CREATE TABLE t_user (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -18,5 +18,7 @@ CREATE TABLE t_user (
     updated_at TIMESTAMP,
     updated_by  VARCHAR(20)
 )default charset=utf8;
+
+
 CREATE INDEX idx_t_user_name on t_user(name);
 CREATE INDEX idx_t_user_mobile on t_user(mobile);
