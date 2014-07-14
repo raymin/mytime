@@ -9,7 +9,7 @@ import org.unitils.spring.annotation.SpringBeanByType;
 
 @Transactional(value = TransactionMode.ROLLBACK)
 @SpringApplicationContext({"classpath:applicationContext.xml", "classpath:testDataSource.xml"})
-public class BaseServiceTest extends UnitilsJUnit4 {
+public abstract class BaseServiceTest extends UnitilsJUnit4 {
 
     @SpringBeanByType
     protected UserService userService;
