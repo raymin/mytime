@@ -3,30 +3,180 @@
 <mapper namespace="User">
 
     <resultMap id="UserMap" type="UserDTO">
-        <id property="id" column="id" />
-        <result property="name" column="name" />
-        <result property="pwd" column="pwd" />
-        <result property="type" column="type" />
-        <result property="nickName" column="nick_name" />
-        <result property="mobile" column="mobile" />
-        <result property="email" column="email" />
-        <result property="sex" column="sex" />
-        <result property="birthday" column="birthday" />
-        <result property="picUrl" column="pic_url" />
-        <result property="lastLoginTime" column="last_login_time" />
-        <result property="createdAt" column="created_at" />
-        <result property="createdBy" column="created_by" />
-        <result property="updatedAt" column="updated_at" />
-        <result property="updatedBy" column="updated_by" />
+        <id property="id" column="ID"/>
+        <result property="name" column="NAME"/>
+        <result property="nameDisp" column="NAME_DISP"/>
+        <result property="nickName" column="NICK_NAME"/>
+        <result property="mobile" column="MOBILE"/>
+        <result property="email" column="EMAIL"/>
+        <result property="emailDisp" column="EMAIL_DISP"/>
+        <result property="pwd" column="PWD"/>
+        <result property="type" column="TYPE"/>
+        <result property="src" column="SRC"/>
+        <result property="status" column="STATUS"/>
+        <result property="sex" column="SEX"/>
+        <result property="birthday" column="BIRTHDAY"/>
+        <result property="picUrl" column="PIC_URL"/>
+        <result property="lastLoginTime" column="LAST_LOGIN_TIME"/>
+        <result property="customerIp" column="CUSTOMER_IP"/>
+        <result property="clientIp" column="CLIENT_IP"/>
+        <result property="createdAt" column="CREATED_AT"/>
+        <result property="createdBy" column="CREATED_BY"/>
+        <result property="updatedAt" column="UPDATED_AT"/>
+        <result property="updatedBy" column="UPDATED_BY"/>
     </resultMap>
+
+    <insert id="insert" parameterType="UserDTO" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user
+        (
+            name,
+            name_disp,
+            nick_name,
+            mobile,
+            email,
+            email_disp,
+            pwd,
+            type,
+            src,
+            status,
+            sex,
+            birthday,
+            pic_url,
+            last_login_time,
+            customer_ip,
+            client_ip,
+            created_at,
+            created_by
+        )
+        values
+        (
+            #{name},
+            #{nameDisp},
+            #{nickName},
+            #{mobile},
+            #{email},
+            #{emailDisp},
+            #{pwd},
+            #{type},
+            #{src},
+            #{status},
+            #{sex},
+            #{birthday},
+            #{picUrl},
+            #{lastLoginTime},
+            #{customerIp},
+            #{clientIp},
+            #{createdAt},
+            #{createdBy}
+        )
+    </insert>
+
+    <update id="update" parameterType="UserDTO">
+        update t_user
+        <set>
+            <if test="name != null and name != '' ">
+                name = #{name},
+            </if>
+            <if test="nameDisp != null and nameDisp != '' ">
+                name_disp = #{nameDisp},
+            </if>
+            <if test="nickName != null and nickName != '' ">
+                nick_name = #{nickName},
+            </if>
+            <if test="mobile != null and mobile != '' ">
+                mobile = #{mobile},
+            </if>
+            <if test="email != null and email != '' ">
+                email = #{email},
+            </if>
+            <if test="emailDisp != null and emailDisp != '' ">
+                email_disp = #{emailDisp},
+            </if>
+            <if test="pwd != null and pwd != '' ">
+                pwd = #{pwd},
+            </if>
+            <if test="type != null and type != '' ">
+                type = #{type},
+            </if>
+            <if test="src != null and src != '' ">
+                src = #{src},
+            </if>
+            <if test="status != null and status != '' ">
+                status = #{status},
+            </if>
+            <if test="sex != null and sex != '' ">
+                sex = #{sex},
+            </if>
+            <if test="birthday != null and birthday != '' ">
+                birthday = #{birthday},
+            </if>
+            <if test="picUrl != null and picUrl != '' ">
+                pic_url = #{picUrl},
+            </if>
+            <if test="lastLoginTime != null and lastLoginTime != '' ">
+                lastLoginTime = #{lastLoginTime},
+            </if>
+            <if test="customerIp != null and customerIp != '' ">
+                customer_ip = #{customerIp},
+            </if>
+            <if test="clientIp != null and clientIp != '' ">
+                client_ip = #{clientIp},
+            </if>
+            updated_at = #{updatedAt},
+            updated_by = #{updatedBy}
+        </set>
+        where id = #{id}
+    </update>
 
     <select id="selectById" parameterType="Long" resultMap="UserMap" fetchSize="1">
         SELECT * FROM t_user WHERE id=#{id}
     </select>
 
-    <select id="countByCnd" resultType="int">
-        SELECT COUNT(*) FROM t_user WHERE type=#{type}
+    <select id="selectByUniqueKey" parameterType="UserDTO" resultMap="UserMap" fetchSize="1">
+        SELECT * FROM t_user WHERE 1=1
+        <choose>
+            <when test="mobile != null and mobile != '' ">
+                and mobile = #{mobile}
+            </when>
+            <when test="email != null and email != '' ">
+                and email = #{email}
+            </when>
+            <otherwise>
+                and name = #{name}
+            </otherwise>
+        </choose>
     </select>
+
+    <select id="countByCnd" parameterType="UserDTO" resultType="Integer">
+        SELECT COUNT(*) FROM t_user
+        <include refid="cndRefId"/>
+    </select>
+
+    <select id="selectByCnd" parameterType="UserDTO" resultMap="UserMap">
+        SELECT * FROM t_user
+        <include refid="cndRefId"/>
+    </select>
+
+    <sql id="cndRefId">
+        <where>
+            <if test="type != null and type != '' ">
+                type = #{type}
+            </if>
+            <if test="src != null and src != '' ">
+                and src = #{src}
+            </if>
+            <if test="status != null and status != '' ">
+                and status = #{status}
+            </if>
+            <if test="sex != null and sex != '' ">
+                and sex = #{sex}
+            </if>
+            <if test="birthday != null and birthday != '' ">
+                and birthday = #{birthday}
+            </if>
+        </where>
+    </sql>
+
 </mapper>
 
 

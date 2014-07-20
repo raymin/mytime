@@ -5,7 +5,7 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 import java.io.Serializable;
 
-public class BaseJson  implements Serializable {
+public class BaseJson implements Serializable {
 
     @Override
     public String toString() {

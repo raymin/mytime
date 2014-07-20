@@ -3,7 +3,7 @@ package com.mytime.view.json;
 
 import java.util.List;
 
-public class CalendarJson extends BaseJson{
+public class CalendarJson extends BaseJson {
 
     private String userId;
     private String defaultDate;

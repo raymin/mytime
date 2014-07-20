@@ -9,4 +9,4 @@ fi
 
 export GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=27002"
 export root_dir=$0/..
-./gradlew -p $root_dir jettyRun -Dprj=$(basename $(pwd)) -Dapp.name=$(basename $(pwd)) -Dapp.log.home=${app_log_home} -DhttpPort=27000 -DstopPort=27001
+gradle -p $root_dir jettyRun -Dprj=$(basename $(pwd)) -Dapp.name=$(basename $(pwd)) -Dapp.log.home=${app_log_home} -DhttpPort=27000 -DstopPort=27001

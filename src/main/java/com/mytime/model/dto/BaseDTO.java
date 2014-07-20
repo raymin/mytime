@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Dto公共类
  */
-public class BaseDTO implements Serializable{
+public class BaseDTO implements Serializable {
 
     @Override
     public String toString() {

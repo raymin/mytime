@@ -1,17 +1,13 @@
 package com.mytime.controller;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.mytime.model.dto.EventDTO;
 import com.mytime.utils.DateUtil;
-import com.mytime.view.json.CalendarJson;
 import com.mytime.view.json.EventJson;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,17 +15,17 @@ import java.util.List;
 @Controller
 public class CalendarController {
 
-    @RequestMapping(value="/myCal.do")
+    @RequestMapping(value = "/myCal.do")
     public ModelAndView showMyCal() throws Exception {
         return new ModelAndView("user/myCal");
     }
 
-    @RequestMapping(value="/newEvent.do")
+    @RequestMapping(value = "/newEvent.do")
     public ModelAndView newEvent() throws Exception {
         return new ModelAndView("user/event");
     }
 
-    @RequestMapping(value="/saveEvent.do")
+    @RequestMapping(value = "/saveEvent.do")
     @ResponseBody
     public String saveEvent() throws Exception {
         List<EventJson> eventList = new ArrayList<EventJson>();
@@ -51,7 +47,7 @@ public class CalendarController {
         return gson.toJson(eventList);
     }
 
-    @RequestMapping(value="/eventList.do")
+    @RequestMapping(value = "/eventList.do")
     @ResponseBody
     public String getEventList() throws Exception {
 

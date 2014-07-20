@@ -38,3 +38,9 @@ spring不支持velocity-tool-2.0 需要重载VelocityToolboxView的createVelocit
 7、velocity-tool.xml中定义的date工具在页面上不起作用
 解决办法：
 同6
+
+8、mysql默认区分大小写问题
+解决办法：
+vi /etc/my.cnf
+#添加以下配置，忽略大小写设置成1 1
+lower_case_table_names=1

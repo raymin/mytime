@@ -1,8 +1,10 @@
-package com.mytime.model.dto;
+package com.mytime.view.vo;
+
+import com.mytime.model.dto.UserDTO;
 
 import java.util.Date;
 
-public class UserDTO extends BaseDTO {
+public class UserVO extends BaseVO {
 
     // 对应数据库表主键
     private Long id;
@@ -46,6 +48,24 @@ public class UserDTO extends BaseDTO {
     private Date updatedAt;
     // 更新人
     private String updatedBy;
+
+    public UserVO() {
+
+    }
+
+    public UserVO(UserDTO userDto) {
+        this.id = userDto.getId();
+        this.nameDisp = userDto.getNameDisp();
+        this.nickName = userDto.getNickName();
+        this.mobile = userDto.getMobile();
+        this.emailDisp = userDto.getEmailDisp();
+        this.lastLoginTime = userDto.getLastLoginTime();
+        this.picUrl = userDto.getPicUrl();
+        this.sex = userDto.getSex();
+        this.birthday = userDto.getBirthday();
+        this.createdAt = userDto.getCreatedAt();
+        this.updatedAt = userDto.getUpdatedAt();
+    }
 
     public Long getId() {
         return id;

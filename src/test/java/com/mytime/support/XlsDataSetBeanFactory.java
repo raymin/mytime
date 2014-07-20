@@ -23,7 +23,7 @@ public class XlsDataSetBeanFactory {
     // 从DbUnit的EXCEL数据集文件中创建多个bean
     public static <T> List<T> createBeans(String file, String tableName, Class<T> clazz, Class<?> testClass) throws Exception {
         BeanUtils beanUtils = createBeanUtils();
-        List<Map<String, Object>> propsList = createProps(file, tableName,testClass);
+        List<Map<String, Object>> propsList = createProps(file, tableName, testClass);
         List<T> beans = new ArrayList<T>();
         for (Map<String, Object> props : propsList) {
             T bean = clazz.newInstance();

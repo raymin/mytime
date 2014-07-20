@@ -46,18 +46,18 @@ stopKey = 'stop-jetty'
 stopPort = Integer.valueOf(_stopPort)
 httpPort = Integer.valueOf(_httpPort)
 
-ext{
+ext {
     servlet_version = "2.5"
     gson_version = "1.7.1";
     joda_version = "1.6.2"
-    beanutils_version = "1.8.3"
+    beanutils_version = "1.9.0"
     dbcp_version = "1.4"
     velocity_version = "1.7"
     velocity_tools_version = "2.0"
     spring_version = "3.2.0.RELEASE"
 //ibatis_version = "2.3.4.726"
     mybatis_version = "3.2.7"
-    mybatis_spring_version="1.2.2"
+    mybatis_spring_version = "1.2.2"
     lucene_version = "4.9.0"
     mysql_version = "5.1.31"
     unitils_version = "3.4.2"
@@ -173,9 +173,9 @@ test {
 
 task dumpSystemInfo << {
     println "\n*****************************************************************************"
-    println "Current module ["+ _appName +"] env=" + env
-    println "Current module ["+ _appName +"] httpPort=" + httpPort + " stopPort=" + stopPort
-    println "Current module ["+ _appName +"] log home: " + System.getProperty("app.log.home")
+    println "Current module [" + _appName + "] env=" + env
+    println "Current module [" + _appName + "] httpPort=" + httpPort + " stopPort=" + stopPort
+    println "Current module [" + _appName + "] log home: " + System.getProperty("app.log.home")
     println "*****************************************************************************\n"
 }
 
@@ -188,7 +188,6 @@ assemble.dependsOn dumpSystemInfo
 clean.dependsOn dumpSystemInfo
 jettyRun.dependsOn dumpSystemInfo
 jettyRunWar.dependsOn dumpSystemInfo
-
 
 //给test任务传递参数
 //test {

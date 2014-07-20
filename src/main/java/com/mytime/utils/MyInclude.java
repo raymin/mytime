@@ -17,32 +17,25 @@ import org.apache.velocity.runtime.resource.Resource;
 import java.io.IOException;
 import java.io.Writer;
 
-/**
- * Created with IntelliJ IDEA.
- * UserDTO: rayminr
- * Date: 12/10/13
- * Time: 10:02 PM
- * To change this template use File | Settings | File Templates.
- */
-public class MyInclude extends InputBase{
+public class MyInclude extends InputBase {
     private String outputMsgStart = "";
     private String outputMsgEnd = "";
 
     /**
      * Return name of this directive.
+     *
      * @return The name of this directive.
      */
-    public String getName()
-    {
+    public String getName() {
         return "my_include";
     }
 
     /**
      * Return type of this directive.
+     *
      * @return The type of this directive.
      */
-    public int getType()
-    {
+    public int getType() {
         return LINE;
     }
 
@@ -50,14 +43,14 @@ public class MyInclude extends InputBase{
      * Since there is no processing of content,
      * there is never a need for an internal scope.
      */
-    public boolean isScopeProvided()
-    {
+    public boolean isScopeProvided() {
         return false;
     }
 
     /**
-     *  simple init - init the tree and get the elementKey from
-     *  the AST
+     * simple init - init the tree and get the elementKey from
+     * the AST
+     *
      * @param rs
      * @param context
      * @param node
@@ -65,9 +58,8 @@ public class MyInclude extends InputBase{
      */
     public void init(RuntimeServices rs, InternalContextAdapter context,
                      Node node)
-            throws TemplateInitException
-    {
-        super.init( rs, context, node );
+            throws TemplateInitException {
+        super.init(rs, context, node);
 
         /*
          *  get the msg, and add the space so we don't have to
@@ -76,14 +68,15 @@ public class MyInclude extends InputBase{
         outputMsgStart = rsvc.getString(RuntimeConstants.ERRORMSG_START);
         outputMsgStart = outputMsgStart + " ";
 
-        outputMsgEnd = rsvc.getString(RuntimeConstants.ERRORMSG_END );
+        outputMsgEnd = rsvc.getString(RuntimeConstants.ERRORMSG_END);
         outputMsgEnd = " " + outputMsgEnd;
     }
 
     /**
-     *  iterates through the argument list and renders every
-     *  argument that is appropriate.  Any non appropriate
-     *  arguments are logged, but render() continues.
+     * iterates through the argument list and renders every
+     * argument that is appropriate.  Any non appropriate
+     * arguments are logged, but render() continues.
+     *
      * @param context
      * @param writer
      * @param node
@@ -95,35 +88,30 @@ public class MyInclude extends InputBase{
     public boolean render(InternalContextAdapter context,
                           Writer writer, Node node)
             throws IOException, MethodInvocationException,
-            ResourceNotFoundException
-    {
+            ResourceNotFoundException {
         /*
          *  get our arguments and check them
          */
 
         int argCount = node.jjtGetNumChildren();
 
-        for( int i = 0; i < argCount; i++)
-        {
+        for (int i = 0; i < argCount; i++) {
             /*
              *  we only handle StringLiterals and References right now
              */
 
             Node n = node.jjtGetChild(i);
 
-            if ( n.getType() ==  ParserTreeConstants.JJTSTRINGLITERAL ||
-                    n.getType() ==  ParserTreeConstants.JJTREFERENCE )
-            {
-                if (!renderOutput( n, context, writer ))
-                    outputErrorToStream( writer, "error with arg " + i
+            if (n.getType() == ParserTreeConstants.JJTSTRINGLITERAL ||
+                    n.getType() == ParserTreeConstants.JJTREFERENCE) {
+                if (!renderOutput(n, context, writer))
+                    outputErrorToStream(writer, "error with arg " + i
                             + " please see log.");
-            }
-            else
-            {
+            } else {
                 String msg = "invalid #include() argument '"
                         + n.toString() + "' at " + Log.formatFileString(this);
                 rsvc.getLog().error(msg);
-                outputErrorToStream( writer, "error with arg " + i
+                outputErrorToStream(writer, "error with arg " + i
                         + " please see log.");
                 throw new VelocityException(msg);
             }
@@ -133,23 +121,21 @@ public class MyInclude extends InputBase{
     }
 
     /**
-     *  does the actual rendering of the included file
+     * does the actual rendering of the included file
      *
-     *  @param node AST argument of type StringLiteral or Reference
-     *  @param context valid context so we can render References
-     *  @param writer output Writer
-     *  @return boolean success or failure.  failures are logged
-     *  @exception IOException
-     *  @exception MethodInvocationException
-     *  @exception ResourceNotFoundException
+     * @param node    AST argument of type StringLiteral or Reference
+     * @param context valid context so we can render References
+     * @param writer  output Writer
+     * @return boolean success or failure.  failures are logged
+     * @throws IOException
+     * @throws MethodInvocationException
+     * @throws ResourceNotFoundException
      */
-    private boolean renderOutput( Node node, InternalContextAdapter context,
-                                  Writer writer )
+    private boolean renderOutput(Node node, InternalContextAdapter context,
+                                 Writer writer)
             throws IOException, MethodInvocationException,
-            ResourceNotFoundException
-    {
-        if ( node == null )
-        {
+            ResourceNotFoundException {
+        if (node == null) {
             rsvc.getLog().error("#include() null argument");
             return false;
         }
@@ -157,9 +143,8 @@ public class MyInclude extends InputBase{
         /*
          *  does it have a value?  If you have a null reference, then no.
          */
-        Object value = node.value( context );
-        if ( value == null)
-        {
+        Object value = node.value(context);
+        if (value == null) {
             rsvc.getLog().error("#include() null argument");
             return false;
         }
@@ -185,13 +170,10 @@ public class MyInclude extends InputBase{
 
         Resource resource = null;
 
-        try
-        {
+        try {
             if (!blockinput)
                 resource = rsvc.getContent(arg, getInputEncoding(context));
-        }
-        catch ( ResourceNotFoundException rnfe )
-        {
+        } catch (ResourceNotFoundException rnfe) {
             /*
              * the arg wasn't found.  Note it and throw
              */
@@ -202,15 +184,11 @@ public class MyInclude extends InputBase{
 
         /**
          * pass through application level runtime exceptions
-         */
-        catch( RuntimeException e )
-        {
+         */ catch (RuntimeException e) {
             rsvc.getLog().error("#include(): arg = '" + arg +
                     "', called at " + Log.formatFileString(this));
             throw e;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             String msg = "#include(): arg = '" + arg +
                     "', called at " + Log.formatFileString(this);
             rsvc.getLog().error(msg, e);
@@ -223,29 +201,28 @@ public class MyInclude extends InputBase{
          *    expected behavior.
          */
 
-        if ( blockinput )
+        if (blockinput)
             return true;
 
-        else if ( resource == null )
+        else if (resource == null)
             return false;
 
-        writer.write((String)resource.getData());
+        writer.write((String) resource.getData());
         return true;
     }
 
     /**
-     *  Puts a message to the render output stream if ERRORMSG_START / END
-     *  are valid property strings.  Mainly used for end-user template
-     *  debugging.
-     *  @param writer
-     *  @param msg
-     *  @throws IOException
+     * Puts a message to the render output stream if ERRORMSG_START / END
+     * are valid property strings.  Mainly used for end-user template
+     * debugging.
+     *
+     * @param writer
+     * @param msg
+     * @throws IOException
      */
-    private void outputErrorToStream( Writer writer, String msg )
-            throws IOException
-    {
-        if ( outputMsgStart != null  && outputMsgEnd != null)
-        {
+    private void outputErrorToStream(Writer writer, String msg)
+            throws IOException {
+        if (outputMsgStart != null && outputMsgEnd != null) {
             writer.write(outputMsgStart);
             writer.write(msg);
             writer.write(outputMsgEnd);

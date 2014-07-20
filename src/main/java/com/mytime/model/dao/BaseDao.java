@@ -4,7 +4,6 @@ package com.mytime.model.dao;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,15 +37,6 @@ public abstract class BaseDao {
 
     public <T> int update(String sqlId, T obj) {
         return sqlSessionTemplate.update(sqlId, obj);
-    }
-
-    protected Map<Object, Object> buildCndMap(Object... conditions) {
-
-        Map<Object, Object> cndMap = new HashMap<Object, Object>();
-        for (int i = 0; i < conditions.length; i += 2) {
-            cndMap.put(conditions[i], conditions[i + 1]);
-        }
-        return cndMap;
     }
 
 }
