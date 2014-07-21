@@ -1,4 +1,4 @@
-package com.mytime.view;
+package com.mytime.view.utils;
 
 
 import org.apache.velocity.context.Context;

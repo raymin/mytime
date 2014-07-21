@@ -10,22 +10,44 @@ import java.util.Enumeration;
 
 public class IPUtil {
 
+    /**
+     * 获取客户端用户IP
+     *
+     * @param request
+     * @return
+     */
     public static String getRemoteIp(HttpServletRequest request) {
 
         String ip = request.getHeader("x-forwarded-for");
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (MyString.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getHeader("Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (MyString.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getHeader("WL-Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (MyString.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
         }
-        ip = MyString.trimToLen(ip, 100);
+        // 多个路由时，取第一个非unknown的ip
+        if (MyString.isNotBlank(ip)) {
+            final String[] arr = ip.split(",");
+            for (final String str : arr) {
+                if (!"unknown".equalsIgnoreCase(str)) {
+                    ip = str;
+                    break;
+                }
+            }
+        }
+
         return ip;
     }
 
+    /**
+     * 获取本地IP
+     *
+     * @param request
+     * @return
+     */
     public static String getLocalIp(HttpServletRequest request) {
 
         Enumeration allNetInterfaces = null;

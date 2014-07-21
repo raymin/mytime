@@ -21,7 +21,7 @@
         <property name="exposeSessionAttributes" value="true"/>
         <!-- spring的日期格式化 -->
         <!-- spring不支持velocity-tool-2.0 需要重载VelocityToolboxView的createVelocityContext方法-->
-        <property name="viewClass" value="com.mytime.view.VelocityToolboxViewExt"></property>
+        <property name="viewClass" value="com.mytime.view.utils.VelocityToolboxViewExt"></property>
         <property name="toolboxConfigLocation" value="/WEB-INF/velocity-tool.xml"/>
     </bean>
 

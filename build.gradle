@@ -63,6 +63,8 @@ ext {
     unitils_version = "3.4.2"
     emma_version = "2.0.5312"
     poi_version = "3.2-FINAL"
+    ehcache_version="2.6.2"
+
 
 }
 
@@ -70,6 +72,8 @@ ext {
 dependencies {
 
     def servlet_lib = ["javax.servlet:servlet-api:$servlet_version"]
+
+    def ehcache_lib = ["net.sf.ehcache:ehcache-core:$ehcache_version"]
 
     def common_lib = ["com.google.code.gson:gson:$gson_version",
             "joda-time:joda-time:$joda_version",
@@ -114,7 +118,7 @@ dependencies {
     }
 
     providedCompile servlet_lib
-    compile common_lib, view_lib, spring_lib, orm_lib, search_lib
+    compile common_lib, view_lib, spring_lib, orm_lib, search_lib, ehcache_lib
     testCompile test_lib
     emma emma_lib
 }
