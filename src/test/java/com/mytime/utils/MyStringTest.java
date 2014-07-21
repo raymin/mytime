@@ -27,10 +27,11 @@ public class MyStringTest {
         Assert.assertEquals(false, MyString.isMatch("123456", Constants.REGEX_USER_NAME_FORMAT));
         Assert.assertEquals(false, MyString.isMatch("123aaa", Constants.REGEX_USER_NAME_FORMAT));
         Assert.assertEquals(false, MyString.isMatch("aaa中文", Constants.REGEX_USER_NAME_FORMAT));
+        Assert.assertEquals(false, MyString.isMatch("aaa!", Constants.REGEX_USER_NAME_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("aaa111", Constants.REGEX_USER_NAME_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("aaa_111", Constants.REGEX_USER_NAME_FORMAT));
-        //Assert.assertEquals(true, MyString.isMatch("aaa-111", Constants.REGEX_USER_NAME_FORMAT));
-        //Assert.assertEquals(true, MyString.isMatch("aaa.111", Constants.REGEX_USER_NAME_FORMAT));
+        Assert.assertEquals(true, MyString.isMatch("aaa-111", Constants.REGEX_USER_NAME_FORMAT));
+        Assert.assertEquals(true, MyString.isMatch("aaa.111", Constants.REGEX_USER_NAME_FORMAT));
     }
 
     @Test
@@ -38,6 +39,7 @@ public class MyStringTest {
         Assert.assertEquals(false, MyString.isMatch("test.test.com", Constants.REGEX_USER_EMAIL_FORMAT));
         Assert.assertEquals(false, MyString.isMatch("test@testcom", Constants.REGEX_USER_EMAIL_FORMAT));
         Assert.assertEquals(false, MyString.isMatch("test@test@test.com", Constants.REGEX_USER_EMAIL_FORMAT));
+        Assert.assertEquals(false, MyString.isMatch("tes+t@test.com", Constants.REGEX_USER_EMAIL_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("test_1@test.com", Constants.REGEX_USER_EMAIL_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("test-1@test-1.com", Constants.REGEX_USER_EMAIL_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("test.1@test-1.com", Constants.REGEX_USER_EMAIL_FORMAT));
@@ -57,6 +59,11 @@ public class MyStringTest {
     @Test
     public void testPwd() {
         Assert.assertEquals(false, MyString.isMatch("12345", Constants.REGEX_USER_PWD_FORMAT));
+        Assert.assertEquals(false, MyString.isMatch("~!123456", Constants.REGEX_USER_PWD_FORMAT));
         Assert.assertEquals(true, MyString.isMatch("123456", Constants.REGEX_USER_PWD_FORMAT));
+        Assert.assertEquals(true, MyString.isMatch("!123456", Constants.REGEX_USER_PWD_FORMAT));
+        Assert.assertEquals(true, MyString.isMatch("!@#$%^&*aaDD123456", Constants.REGEX_USER_PWD_FORMAT));
+
     }
+
 }

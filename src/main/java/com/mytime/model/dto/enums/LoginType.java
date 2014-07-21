@@ -1,4 +1,4 @@
-package com.mytime.model.dto.constant;
+package com.mytime.model.dto.enums;
 
 /**
  * 登录类型
