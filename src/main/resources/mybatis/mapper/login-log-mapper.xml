@@ -3,18 +3,18 @@
 <mapper namespace="LoginLog">
 
     <insert id="insert" parameterType="LoginLogDTO" useGeneratedKeys="true" keyProperty="id">
-        insert into t_login_log
+        INSERT INTO T_LOGIN_LOG
         (
-            login_type,
-            login_account,
-            login_pwd,
-            login_time,
-            customer_ip,
-            client_ip,
-            created_at,
-            created_by
+            LOGIN_TYPE,
+            LOGIN_ACCOUNT,
+            LOGIN_PWD,
+            LOGIN_TIME,
+            CUSTOMER_IP,
+            CLIENT_IP,
+            CREATED_AT,
+            CREATED_BY
         )
-        values
+        VALUES
         (
             #{loginType},
             #{loginAccount},

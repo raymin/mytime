@@ -27,28 +27,28 @@
     </resultMap>
 
     <insert id="insert" parameterType="UserDTO" useGeneratedKeys="true" keyProperty="id">
-        insert into t_user
+        INSERT INTO T_USER
         (
-            name,
-            name_disp,
-            nick_name,
-            mobile,
-            email,
-            email_disp,
-            pwd,
-            type,
-            src,
-            status,
-            sex,
-            birthday,
-            pic_url,
-            last_login_time,
-            customer_ip,
-            client_ip,
-            created_at,
-            created_by
+            NAME,
+            NAME_DISP,
+            NICK_NAME,
+            MOBILE,
+            EMAIL,
+            EMAIL_DISP,
+            PWD,
+            TYPE,
+            SRC,
+            STATUS,
+            SEX,
+            BIRTHDAY,
+            PIC_URL,
+            LAST_LOGIN_TIME,
+            CUSTOMER_IP,
+            CLIENT_IP,
+            CREATED_AT,
+            CREATED_BY
         )
-        values
+        VALUES
         (
             #{name},
             #{nameDisp},
@@ -72,88 +72,88 @@
     </insert>
 
     <update id="update" parameterType="UserDTO">
-        update t_user
+        UPDATE T_USER
         <set>
             <if test="name != null and name != '' ">
-                name = #{name},
+                NAME = #{name},
             </if>
             <if test="nameDisp != null and nameDisp != '' ">
-                name_disp = #{nameDisp},
+                NAME_DISP = #{nameDisp},
             </if>
             <if test="nickName != null and nickName != '' ">
-                nick_name = #{nickName},
+                NICK_NAME = #{nickName},
             </if>
             <if test="mobile != null and mobile != '' ">
-                mobile = #{mobile},
+                MOBILE = #{mobile},
             </if>
             <if test="email != null and email != '' ">
-                email = #{email},
+                EMAIL = #{email},
             </if>
             <if test="emailDisp != null and emailDisp != '' ">
-                email_disp = #{emailDisp},
+                EMAIL_DISP = #{emailDisp},
             </if>
             <if test="pwd != null and pwd != '' ">
-                pwd = #{pwd},
+                PWD = #{pwd},
             </if>
             <if test="type != null and type != '' ">
-                type = #{type},
+                TYPE = #{type},
             </if>
             <if test="src != null and src != '' ">
-                src = #{src},
+                SRC = #{src},
             </if>
             <if test="status != null and status != '' ">
-                status = #{status},
+                STATUS = #{status},
             </if>
             <if test="sex != null and sex != '' ">
-                sex = #{sex},
+                SEX = #{sex},
             </if>
             <if test="birthday != null and birthday != '' ">
-                birthday = #{birthday},
+                BIRTHDAY = #{birthday},
             </if>
             <if test="picUrl != null and picUrl != '' ">
-                pic_url = #{picUrl},
+                PIC_URL = #{picUrl},
             </if>
             <if test="lastLoginTime != null and lastLoginTime != '' ">
-                lastLoginTime = #{lastLoginTime},
+                LAST_LOGIN_TIME = #{lastLoginTime},
             </if>
             <if test="customerIp != null and customerIp != '' ">
-                customer_ip = #{customerIp},
+                CUSTOMER_IP = #{customerIp},
             </if>
             <if test="clientIp != null and clientIp != '' ">
-                client_ip = #{clientIp},
+                CLIENT_IP = #{clientIp},
             </if>
-            updated_at = #{updatedAt},
-            updated_by = #{updatedBy}
+            UPDATED_AT = #{updatedAt},
+            UPDATED_BY = #{updatedBy}
         </set>
-        where id = #{id}
+        where ID = #{id}
     </update>
 
     <select id="selectById" parameterType="Long" resultMap="UserMap" fetchSize="1">
-        SELECT * FROM t_user WHERE id=#{id}
+        SELECT * FROM T_USER WHERE ID=#{id}
     </select>
 
     <select id="selectByUniqueKey" parameterType="UserDTO" resultMap="UserMap" fetchSize="1">
-        SELECT * FROM t_user WHERE 1=1
+        SELECT * FROM T_USER WHERE 1=1
         <choose>
             <when test="mobile != null and mobile != '' ">
-                and mobile = #{mobile}
+                and MOBILE = #{mobile}
             </when>
             <when test="email != null and email != '' ">
-                and email = #{email}
+                and EMAIL = #{email}
             </when>
             <otherwise>
-                and name = #{name}
+                and NAME = #{name}
             </otherwise>
         </choose>
     </select>
 
     <select id="countByCnd" parameterType="UserDTO" resultType="Integer">
-        SELECT COUNT(*) FROM t_user
+        SELECT COUNT(*) FROM T_USER
         <include refid="cndRefId"/>
     </select>
 
     <select id="selectByCnd" parameterType="UserDTO" resultMap="UserMap">
-        SELECT * FROM t_user
+        SELECT * FROM T_USER
         <include refid="cndRefId"/>
     </select>
 

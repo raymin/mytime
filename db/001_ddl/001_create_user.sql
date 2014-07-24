@@ -1,30 +1,30 @@
-DROP TABLE IF EXISTS t_user;
-CREATE TABLE t_user (
-  id              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name            VARCHAR(100)    NOT NULL,
-  name_disp       VARCHAR(100),
-  nick_name       VARCHAR(100),
-  mobile          VARCHAR(20),
-  email           VARCHAR(200),
-  email_disp      VARCHAR(200),
-  pwd             VARCHAR(256)    NOT NULL,
-  type            VARCHAR(10),
-  src             VARCHAR(10),
-  status          CHAR(10),
-  sex             CHAR(1),
-  birthday        VARCHAR(10),
-  pic_url         VARCHAR(200),
-  last_login_time TIMESTAMP,
-  customer_ip     VARCHAR(100),
-  client_ip       VARCHAR(100),
-  created_at      TIMESTAMP       NOT NULL,
-  created_by      VARCHAR(20)     NOT NULL,
-  updated_at      TIMESTAMP,
-  updated_by      VARCHAR(20)
+DROP TABLE IF EXISTS T_USER;
+CREATE TABLE T_USER (
+  ID              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  NAME            VARCHAR(100)    NOT NULL,
+  NAME_DISP       VARCHAR(100),
+  NICK_NAME       VARCHAR(100),
+  MOBILE          VARCHAR(20),
+  EMAIL           VARCHAR(200),
+  EMAIL_DISP      VARCHAR(200),
+  PWD             VARCHAR(256)    NOT NULL,
+  TYPE            VARCHAR(10),
+  SRC             VARCHAR(10),
+  STATUS          CHAR(10),
+  SEX             CHAR(1),
+  BIRTHDAY        VARCHAR(10),
+  PIC_URL         VARCHAR(200),
+  LAST_LOGIN_TIME TIMESTAMP,
+  CUSTOMER_IP     VARCHAR(100),
+  CLIENT_IP       VARCHAR(100),
+  CREATED_AT      TIMESTAMP       NOT NULL,
+  CREATED_BY      VARCHAR(20)     NOT NULL,
+  UPDATED_AT      TIMESTAMP,
+  UPDATED_BY      VARCHAR(20)
 )
-  DEFAULT CHARSET =utf8;
+DEFAULT CHARSET =UTF8;
 
 
-CREATE UNIQUE INDEX idx_t_user_name ON t_user (name);
-CREATE UNIQUE INDEX idx_t_user_mobile ON t_user (mobile);
-CREATE UNIQUE INDEX idx_t_user_email ON t_user (email);
+CREATE UNIQUE INDEX IDX_T_USER_NAME ON T_USER (NAME);
+CREATE UNIQUE INDEX IDX_T_USER_MOBILE ON T_USER (MOBILE);
+CREATE UNIQUE INDEX IDX_T_USER_EMAIL ON T_USER (EMAIL);

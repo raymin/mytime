@@ -1,18 +1,18 @@
 /*后面需要建成分区表*/
-DROP TABLE IF EXISTS t_login_log;
-CREATE TABLE t_login_log (
-  id            INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  login_type    VARCHAR(10)     NOT NULL,
-  login_account VARCHAR(200)    NOT NULL,
-  login_pwd     VARCHAR(256)    NOT NULL,
-  login_time    TIMESTAMP,
-  customer_ip   VARCHAR(100),
-  client_ip     VARCHAR(100),
-  created_at    TIMESTAMP       NOT NULL,
-  created_by    VARCHAR(20)     NOT NULL,
-  updated_at    TIMESTAMP,
-  updated_by    VARCHAR(20)
+DROP TABLE IF EXISTS T_LOGIN_LOG;
+CREATE TABLE T_LOGIN_LOG (
+  ID            INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  LOGIN_TYPE    VARCHAR(10)     NOT NULL,
+  LOGIN_ACCOUNT VARCHAR(200)    NOT NULL,
+  LOGIN_PWD     VARCHAR(256)    NOT NULL,
+  LOGIN_TIME    TIMESTAMP,
+  CUSTOMER_IP   VARCHAR(100),
+  CLIENT_IP     VARCHAR(100),
+  CREATED_AT    TIMESTAMP       NOT NULL,
+  CREATED_BY    VARCHAR(20)     NOT NULL,
+  UPDATED_AT    TIMESTAMP,
+  UPDATED_BY    VARCHAR(20)
 )
-  DEFAULT CHARSET =utf8;
+DEFAULT CHARSET =UTF8;
 
-CREATE INDEX idx_t_login_log_tc ON t_login_log (login_time, login_account);
+CREATE INDEX IDX_T_LOGIN_LOG_TC ON T_LOGIN_LOG (LOGIN_TIME, LOGIN_ACCOUNT);
