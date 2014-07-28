@@ -25,7 +25,7 @@ sourceSets {
 //定义仓库
 repositories {
     //mavenLocal()  // 本地仓库
-    maven { url "http://172.17.20.5:8888/nexus/content/groups/public/" } // 自定义库地址
+    //maven { url "http://172.17.20.5:8888/nexus/content/groups/public/" } // 自定义库地址
     mavenCentral()  // 中央库
 }
 
@@ -60,7 +60,7 @@ ext {
     mybatis_spring_version = "1.2.2"
     lucene_version = "4.9.0"
     mysql_version = "5.1.31"
-    unitils_version = "3.3-lufax"
+    unitils_version = "3.4.2"
     emma_version = "2.0.5312"
     poi_version = "3.2-FINAL"
     ehcache_version="2.6.2"
@@ -131,8 +131,8 @@ war {
     webInf {
         into('classes') {
             from sourceSets.main.output
-            exclude '**/' + _appName + '*.properties'
-            exclude '**/log4j.properties'
+            //exclude '**/' + _appName + '*.properties'
+            //exclude '**/log4j.properties'
         }
     }
 

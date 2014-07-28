@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "package the war"
-./gradlew clean war
+gradle clean war
 
 mkdir -p build/deploy/config
 cp build/libs/*.war build/deploy

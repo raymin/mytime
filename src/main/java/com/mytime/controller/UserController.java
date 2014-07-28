@@ -23,6 +23,12 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @RequestMapping(value = "/toLogin.do", method = RequestMethod.GET)
+    public ModelAndView toLogin() throws Exception {
+        System.out.println("/toLogin.do");
+        return new ModelAndView("user/login");
+    }
+
     @RequestMapping(value = "/addUser.do", method = RequestMethod.GET)
     public ModelAndView register() throws Exception {
         return new ModelAndView("user/addUser");

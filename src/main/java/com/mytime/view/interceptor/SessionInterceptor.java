@@ -2,6 +2,7 @@ package com.mytime.view.interceptor;
 
 
 import com.mytime.model.dto.UserDTO;
+import com.mytime.view.vo.UserVO;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,9 +26,9 @@ public class SessionInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        UserDTO user = (UserDTO) request.getSession().getAttribute("LoginUser");
-        if (user == null) {
-            response.sendRedirect("/toLogin");
+        UserVO user = (UserVO) request.getSession().getAttribute("LoginUser");
+        if (!request.getRequestURI().toLowerCase().contains("login.do") && user == null) {
+            response.sendRedirect("/mytime/toLogin.do");
             return false;
         }
         return true;

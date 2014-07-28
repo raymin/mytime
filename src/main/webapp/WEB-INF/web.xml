@@ -10,7 +10,7 @@
     <!-- 通过listener加载配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/applicationContext.xml; classpath:/dataSource.xml</param-value>
+        <param-value>classpath:applicationContext.xml; classpath:dataSource.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -29,6 +29,10 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    <filter-mapping>
+        <filter-name>userContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>

@@ -44,3 +44,22 @@ spring不支持velocity-tool-2.0 需要重载VelocityToolboxView的createVelocit
 vi /etc/my.cnf
 #添加以下配置，忽略大小写设置成1 1
 lower_case_table_names=1
+
+9、mysql区分大小写问题导致单元测试找不到表或字段失败问题
+解决办法：
+mysql配置仍然保持默认区分大小写，所有SQL脚本中表和字段名保持大写，SQLMAP中所有表和字段也保持大写
+
+10、创建mysql用户
+解决办法：
+1）、以mysql的root用户登录，mysql -u root -p
+2）、创建用户
+   insert into mysql.user(Host,User,Password,ssl_cipher,x509_issuer,x509_subject) values("localhost","u_mytime",password("p_mytime"),'','','');
+3)、创建数据库
+   create database MYTIME;
+4)、给用户授权
+   grant all privileges on MYTIME.* to u_mytime@localhost identified by 'p_mytime';
+5)、刷新权限表
+   flush privileges;
+6)、修改密码
+   pdate mysql.user set password=password('新密码') where User="u_mytime" and Host="localhost";
+   flush privileges;

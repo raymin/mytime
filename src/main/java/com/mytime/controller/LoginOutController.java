@@ -1,5 +1,6 @@
 package com.mytime.controller;
 
+import com.mytime.model.dto.UserDTO;
 import com.mytime.model.service.LoginOutService;
 import com.mytime.model.service.UserService;
 import com.mytime.utils.IPUtil;
@@ -23,7 +24,7 @@ public class LoginOutController {
     @Resource
     private LoginOutService loginOutService;
 
-    @RequestMapping(value = "/tologin.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/toLogin.do", method = RequestMethod.GET)
     public ModelAndView toLogin() throws Exception {
         return new ModelAndView("user/login");
     }
@@ -39,10 +40,12 @@ public class LoginOutController {
         UserVO userVo = userService.login(account, pwd, validateCode, customerIp);
         if(!UserVO.RET_CODE_SUCCESS.equals(userVo.getRetCode())){
             //登录失败
+            request.getSession().removeAttribute("LoginUser");
             return new ModelAndView("user/login", "user", userVo);
         } else {
             //登录成功，产生ticket/csessionid,并放入cookie
             // TODO
+            request.getSession().setAttribute("LoginUser", userVo);
             String ticketId = loginOutService.createTicket(userVo);
             loginOutService.buildCookie(request, response, userVo, ticketId, "");
             return new ModelAndView("user/loginSuccess", "user", userVo);
@@ -50,8 +53,10 @@ public class LoginOutController {
     }
 
     @RequestMapping(value = "/logout.do", method = RequestMethod.GET)
-    public void logout() throws Exception {
-
+    public ModelAndView logout(HttpServletRequest request,
+                       HttpServletResponse response) throws Exception {
+        request.getSession().removeAttribute("LoginUser");
+        return new ModelAndView("user/login");
     }
 
 }
