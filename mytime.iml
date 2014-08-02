@@ -47,11 +47,11 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-beanutils/commons-beanutils/1.8.3/jar/686ef3410bcf4ab8ce7fd0b899e832aaba5facf7/commons-beanutils-1.8.3.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-beanutils/commons-beanutils/1.9.0/jar/427662b038bd8f52097f783f6ea163e45851b2a1/commons-beanutils-1.9.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-beanutils/commons-beanutils/1.8.3/source/170d03db4cb48be2f8f35ce3243d62c4b2204e2e/commons-beanutils-1.8.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-beanutils/commons-beanutils/1.9.0/source/e86c2e6737d44c2d5060759d091dcd2ef7f37f21/commons-beanutils-1.9.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -243,6 +243,17 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/net.sf.ehcache/ehcache-core/2.6.2/jar/3baecd92015a9f8fe4cf51c8b5d3a5bddcdd3e86/ehcache-core-2.6.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/net.sf.ehcache/ehcache-core/2.6.2/source/1c03312f7cfdbe966f92524d3536255ff74d5d45/ehcache-core-2.6.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/javax.servlet/servlet-api/2.5/jar/5959582d97d8b61f4d154ca9e495aafd16726e34/servlet-api-2.5.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -259,6 +270,17 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-logging/commons-logging/1.1.1/source/f3f156cbff0e0fb0d64bfce31a352cce4a33bc19/commons-logging-1.1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-collections/commons-collections/3.2.1/jar/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-collections/commons-collections/3.2.1/source/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -384,17 +406,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-collections/commons-collections/3.2.1/jar/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-collections/commons-collections/3.2.1/source/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/aopalliance/aopalliance/1.0/jar/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -412,6 +423,125 @@
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/commons-pool/commons-pool/1.5.4/source/3e226507788e09f02eef641e868624fb823af6e6/commons-pool-1.5.4-sources.jar!/" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.1/jar/6f3b8a24bf970f17289b234284c94f43eb42f0e4/slf4j-api-1.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.1/source/46a386136c901748e6a3af67ebde6c22bc6b4524/slf4j-api-1.6.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib/mysql-connector-license.txt" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/activation-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/thumbnailator-0.4.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jboss-vfs-3.1.0.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/mail-1.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-fileupload-1.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/CKFinder-2.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/CKFinderPlugin-ImageResize-2.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/CKFinderPlugin-FileEditor-2.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-io-2.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/CKFinderPlugin-Watermark-2.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jboss-logging-3.0.0.CR1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library" scope="TEST">
@@ -508,6 +638,17 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/dom4j/dom4j/1.6.1/source/a8e7149359255f43e0e5e3b1837948f9ed5861fb/dom4j-1.6.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.4/jar/2396d74b12b905f780ed7966738bb78438e8371a/slf4j-api-1.6.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.4/source/a045ecb292c2b2559e8e9778303a08c91f537c68/slf4j-api-1.6.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -614,17 +755,6 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.hibernate/hibernate/3.2.5.ga/source/e697f16551319c174240e58838585b4c6be60d2c/hibernate-3.2.5.ga-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.4/jar/2396d74b12b905f780ed7966738bb78438e8371a/slf4j-api-1.6.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.slf4j/slf4j-api/1.6.4/source/a045ecb292c2b2559e8e9778303a08c91f537c68/slf4j-api-1.6.4-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

@@ -109,7 +109,10 @@ dependencies {
             "org.unitils:unitils-spring:$unitils_version",
             "org.springframework:spring-test:$spring_version"]
 
+
     def emma_lib = ["emma:emma:$emma_version", "emma:emma_ant:$emma_version"]
+
+    def local_lib = fileTree(dir: 'lib', exclude: 'mysql*.jar')
 
     compile("org.apache.velocity:velocity-tools:$velocity_tools_version") {
         exclude(group: 'org.apache.struts', module: 'struts-core')
@@ -118,7 +121,7 @@ dependencies {
     }
 
     providedCompile servlet_lib
-    compile common_lib, view_lib, spring_lib, orm_lib, search_lib, ehcache_lib
+    compile common_lib, view_lib, spring_lib, orm_lib, search_lib, ehcache_lib, local_lib
     testCompile test_lib
     emma emma_lib
 }
