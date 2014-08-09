@@ -2,13 +2,14 @@ package com.mytime.utils;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-public class IPUtil {
+public class WebUtil {
 
     /**
      * 获取客户端用户IP
@@ -62,11 +63,22 @@ public class IPUtil {
             while (addresses.hasMoreElements()) {
                 ip = (InetAddress) addresses.nextElement();
                 if (ip != null && ip instanceof Inet4Address) {
-                    System.out.println("本机的IP = " + ip.getHostAddress());
+                    Logger.debug(WebUtil.class, String.format("本机的IP = %s",ip.getHostAddress()));
                 }
             }
         }
 
         return ip.getHostAddress();
+    }
+
+    /**
+     * 获取客户端用户浏览器信息
+     *
+     * @param request
+     * @return
+     */
+    public static String getUserAgent(HttpServletRequest request) {
+        String agentInfo = MyString.trimToLen(request.getHeader("user-agent"), 512);
+        return agentInfo;
     }
 }

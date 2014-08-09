@@ -2,8 +2,7 @@ package com.mytime.controller;
 
 import com.mytime.model.dto.UserDTO;
 import com.mytime.model.service.UserService;
-import com.mytime.utils.IPUtil;
-import com.mytime.utils.MyString;
+import com.mytime.utils.WebUtil;
 import com.mytime.view.vo.UserVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -36,7 +34,7 @@ public class UserController {
 
     @RequestMapping(value = "/register.do", method = RequestMethod.POST)
     public ModelAndView register(@ModelAttribute("registerUser") UserDTO userDto, HttpServletRequest request) throws Exception {
-        String customerIp = IPUtil.getRemoteIp(request);
+        String customerIp = WebUtil.getRemoteIp(request);
         userDto.setCustomerIp(customerIp);
         UserVO userVo = userService.addUser(userDto);
 

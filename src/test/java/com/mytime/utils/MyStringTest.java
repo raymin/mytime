@@ -7,6 +7,11 @@ import org.junit.Test;
 public class MyStringTest {
 
     @Test
+    public void getUUID(){
+        String uuid = MyString.getUUID();
+        Assert.assertEquals(32, uuid.length());
+    }
+    @Test
     public void isMatch() {
 
         String regex = "^(?!.*(不合谐)).*$";//用到了前瞻，不含指定字符串

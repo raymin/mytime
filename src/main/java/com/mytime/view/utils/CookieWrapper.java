@@ -42,14 +42,14 @@ public class CookieWrapper {
      *@param name
      *@param value
      *@param domain
-     *@param expire
+     *@param expireSeconds
      */
-    public void setCookie(String name, String value, String domain, int expire) {
+    public void setCookie(String name, String value, String domain, int expireSeconds) {
         Cookie cookie = new Cookie(name, value);
         cookie.setDomain(domain);
         cookie.setPath("/");
-        if (expire >= 0) {
-            cookie.setMaxAge(expire);
+        if (expireSeconds >= 0) {
+            cookie.setMaxAge(expireSeconds);
         }
         response.addCookie(cookie);
     }

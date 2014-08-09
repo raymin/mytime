@@ -9,10 +9,8 @@
             LOGIN_ACCOUNT,
             LOGIN_PWD,
             LOGIN_TIME,
-            CUSTOMER_IP,
-            CLIENT_IP,
-            CREATED_AT,
-            CREATED_BY
+            LOGIN_IP,
+            LOGIN_AGENT
         )
         VALUES
         (
@@ -20,10 +18,8 @@
             #{loginAccount},
             #{loginPwd},
             #{loginTime},
-            #{customerIp},
-            #{clientIp},
-            #{createdAt},
-            #{createdBy}
+            #{loginIp},
+            #{loginAgent}
         )
     </insert>
 

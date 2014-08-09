@@ -5,9 +5,20 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class MyString extends StringUtils {
+
+    /**
+     * 获取去掉“-”的UUID
+     * @return
+     */
+    public static String getUUID() {
+        String uuid = UUID.randomUUID().toString();
+        //去掉“-”符号
+        return uuid.replaceAll("-","");
+    }
 
     /**
      * 按正则表达时匹配

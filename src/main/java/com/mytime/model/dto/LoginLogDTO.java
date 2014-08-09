@@ -14,18 +14,10 @@ public class LoginLogDTO extends BaseDTO {
     private String loginPwd;
     // 登录时间
     private Date loginTime;
-    // 用户的IP（客户端请求IP）
-    private String customerIp;
-    // 程序调用端IP
-    private String clientIp;
-    // 创建时间
-    private Date createdAt;
-    // 创建人
-    private String createdBy;
-    // 更新时间
-    private Date updatedAt;
-    // 更新人
-    private String updatedBy;
+    // 登录用户的IP（客户端请求IP）
+    private String loginIp;
+    // 登录用户的浏览器信息
+    private String loginAgent;
 
     public Long getId() {
         return id;
@@ -67,51 +59,19 @@ public class LoginLogDTO extends BaseDTO {
         this.loginTime = loginTime;
     }
 
-    public String getCustomerIp() {
-        return customerIp;
+    public String getLoginIp() {
+        return loginIp;
     }
 
-    public void setCustomerIp(String customerIp) {
-        this.customerIp = customerIp;
+    public void setLoginIp(String loginIp) {
+        this.loginIp = loginIp;
     }
 
-    public String getClientIp() {
-        return clientIp;
+    public String getLoginAgent() {
+        return loginAgent;
     }
 
-    public void setClientIp(String clientIp) {
-        this.clientIp = clientIp;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
+    public void setLoginAgent(String loginAgent) {
+        this.loginAgent = loginAgent;
     }
 }

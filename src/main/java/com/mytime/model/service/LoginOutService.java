@@ -1,26 +1,200 @@
 package com.mytime.model.service;
 
+import com.mytime.model.dao.LoginLogDao;
+import com.mytime.model.dao.UserDao;
+import com.mytime.model.dto.LoginLogDTO;
+import com.mytime.model.dto.UserDTO;
+import com.mytime.model.dto.enums.LoginType;
+import com.mytime.model.dto.enums.UserEnum;
+import com.mytime.utils.*;
 import com.mytime.view.utils.CookieWrapper;
 import com.mytime.view.vo.UserVO;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 
 @Service
 public class LoginOutService {
 
+    @Resource
+    private UserDao userDao;
+
+    @Resource
+    private LoginLogDao loginlogDao;
+
+
     /**
-     * 登录产生令牌
+     * 用户登录处理
+     *
+     * @param account
+     * @param pwd
+     * @param validateCode
+     * @param request
+     * @return
+     */
+    public UserVO login(String account, String pwd, String validateCode, HttpServletRequest request) {
+
+        //check输入内容
+        //登录名/密码/验证码不能为空
+        if (MyString.isBlank(account)) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_CHECK_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("account", "登录名不能为空"));
+            return userVo;
+        }
+
+        if (MyString.isBlank(pwd)) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_CHECK_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("pwd", "密码不能为空"));
+            return userVo;
+        }
+
+        //校验验证码
+        //TODO
+        /*if (MyString.isBlank(validateCode)) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_CHECK_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("validateCode", "验证码不能为空"));
+            return userVo;
+        }*/
+
+        //根据account判断是哪种类型的登录
+        UserDTO cndDto = new UserDTO();
+        LoginLogDTO loginLogDto = new LoginLogDTO();
+        if (MyString.isMatch(account, Constants.REGEX_USER_MOBILE_FORMAT)) {
+            cndDto.setMobile(account);
+            loginLogDto.setLoginType(LoginType.MOBILE.name());
+        } else if (MyString.isMatch(account, Constants.REGEX_USER_EMAIL_FORMAT)) {
+            cndDto.setEmail(account.toLowerCase());
+            loginLogDto.setLoginType(LoginType.EMAIL.name());
+        } else {
+            cndDto.setName(account.toLowerCase());
+            loginLogDto.setLoginType(LoginType.NAME.name());
+        }
+
+        UserDTO userDto = userDao.selectByUniqueKey(cndDto);
+        if (userDto == null) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_LOGIC_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("login", "登录用户名不存在，请核对！"));
+            return userVo;
+
+        } else if (!CipherUtil.validatePassword(userDto.getPwd(), pwd)) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_LOGIC_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("login", "密码错误，请核对！"));
+            return userVo;
+
+        } else if (UserEnum.UserStatus.INVALID.name().equals(userDto.getStatus())) {
+            UserVO userVo = new UserVO();
+            userVo.setRetCode(UserVO.RET_CODE_LOGIC_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("login", "此用户已注销，请核对！"));
+            return userVo;
+
+        } else {
+            String loginIp = WebUtil.getRemoteIp(request);
+            String loginAgent = WebUtil.getUserAgent(request);
+
+            //登录成功，更新登录日志
+            loginLogDto.setLoginAccount(account);
+            loginLogDto.setLoginPwd(CipherUtil.generatePassword(pwd));
+            loginLogDto.setLoginIp(loginIp);
+            loginLogDto.setLoginAgent(loginAgent);
+            loginLogDto.setLoginTime(new Date());
+
+            //后续需要异步，可以在此加上其它异步事件
+            loginlogDao.insert(loginLogDto);
+        }
+
+        UserVO userVo = new UserVO(userDto);
+        userVo.setRetCode(UserVO.RET_CODE_SUCCESS);
+        userVo.setRetMsg("登录成功");
+
+        return userVo;
+    }
+
+    /**
+     * 判断用户是否登录：session中用户不存在或者ticketId对应的cache用户不存在或者两者用户信息不一致返回false
+     * @param request
+     * @param response
+     * @return
+     */
+    public boolean isLogin(HttpServletRequest request, HttpServletResponse response){
+        UserVO sessionUserVo = (UserVO)request.getSession().getAttribute(Constants.SESSION_LOGIN_USER);
+        if(sessionUserVo == null){
+            return false;
+        }
+        CookieWrapper cookieWrapper = new CookieWrapper(request, response);
+        String ticketId = cookieWrapper.getCookieValue(Constants.COOKIE_KEY_UT);
+        UserVO cacheUserVo = validateTicket(ticketId);
+        if(cacheUserVo == null){
+            return false;
+        }
+
+        if(cacheUserVo.getId() != sessionUserVo.getId()){
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 保存登录用户session信息及产生cookie信息
+     *
+     * @param request
+     * @param response
+     * @param userVo
+     * @return
+     */
+    public boolean createSessionAndCookie(HttpServletRequest request, HttpServletResponse response,
+                                         UserVO userVo) {
+        boolean ret = false;
+        try{
+            request.getSession().setAttribute(Constants.SESSION_LOGIN_USER, userVo);
+            String ticketId = createTicket(userVo);
+            createCookie(request, response, userVo, ticketId, Constants.COOKIE_DOMAIN_ROOT);
+            ret = true;
+        } catch (Exception e){
+            Logger.error(this, String.format("createSessionAndCookie failed, error=%s",e.getMessage()),e);
+        }
+        return ret;
+    }
+
+    /**
+     * 产生登录令牌
      *
      * @param userVo
      * @return
      */
-    public String createTicket(UserVO userVo) {
+    private String createTicket(UserVO userVo) {
 
-        String ticket = "";
+        //产生ticket
+        String ticketId = (MyString.getUUID() + Long.toString(userVo.getId(), 24)).toUpperCase();
+        //根据ticket缓存登录用户信息到Cache
+        CacheProxy.put(ticketId,userVo);
+        return ticketId;
+    }
 
-        return ticket;
+    /**
+     * 校验登录令牌
+     *
+     * @param ticketId
+     * @return
+     */
+    private UserVO validateTicket(String ticketId) {
+
+        Object cacheObj = CacheProxy.get(ticketId);
+        if(cacheObj instanceof UserVO){
+            UserVO userVO = (UserVO)cacheObj;
+            if (userVO != null){
+                return userVO;
+            }
+        }
+        return null;
     }
 
     /**
@@ -32,15 +206,18 @@ public class LoginOutService {
      * @param ticketId
      * @param domain
      */
-    public void buildCookie(HttpServletRequest request, HttpServletResponse response,
+    private void createCookie(HttpServletRequest request, HttpServletResponse response,
                             UserVO userVo, String ticketId, String domain) {
 
         try {
             CookieWrapper cookieWrapper = new CookieWrapper(request, response);
-            cookieWrapper.setCookie("ut", ticketId, domain, 100);
-            cookieWrapper.setCookie("un", userVo.getNameDisp(), domain, 100);
+            //登录后产生的令牌，后面用于登录检验
+            cookieWrapper.setCookie(Constants.COOKIE_KEY_UT, ticketId, domain, Constants.COOKIE_TIME_UT);
+            //用户显示名，用来在页面上显示用 (对于中文名称可能需要进行转码)
+            cookieWrapper.setCookie(Constants.COOKIE_KEY_UN, userVo.getNameDisp(), domain, Constants.COOKIE_TIME_UN);
+
         } catch (Exception e) {
-            //
+            Logger.error(this,String.format("createCookie failed, error=%s",e.getMessage()),e);
         }
     }
 
