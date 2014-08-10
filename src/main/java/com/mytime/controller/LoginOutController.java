@@ -1,8 +1,6 @@
 package com.mytime.controller;
 
 import com.mytime.model.service.LoginOutService;
-import com.mytime.model.service.UserService;
-import com.mytime.utils.MapUtil;
 import com.mytime.view.vo.UserVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,28 +30,19 @@ public class LoginOutController {
                               HttpServletRequest request,
                               HttpServletResponse response) throws Exception {
 
-        UserVO userVo = loginOutService.login(account, pwd, validateCode, request);
+        UserVO userVo = loginOutService.login(account, pwd, validateCode, request, response);
         if(!UserVO.RET_CODE_SUCCESS.equals(userVo.getRetCode())){
-            //登录失败
-            request.getSession().removeAttribute("LoginUser");
             return new ModelAndView("user/login", "user", userVo);
         } else {
-            //登录成功后保存session，并产生cookie
-            boolean isCreated = loginOutService.createSessionAndCookie(request, response, userVo);
-            if(isCreated){
-                return new ModelAndView("user/loginSuccess", "user", userVo);
-            } else {
-                userVo.setRetCode(UserVO.RET_CODE_LOGIC_ERROR);
-                userVo.setRetErrorMap(MapUtil.buildMap("login", "用户登录失败"));
-                return new ModelAndView("user/login", "user", userVo);
-            }
+            return new ModelAndView("user/loginSuccess", "user", userVo);
         }
     }
 
     @RequestMapping(value = "/logout.do", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request,
                        HttpServletResponse response) throws Exception {
-        request.getSession().removeAttribute("LoginUser");
+
+        loginOutService.logout(request, response);
         return new ModelAndView("user/login");
     }
 

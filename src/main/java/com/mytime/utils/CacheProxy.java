@@ -32,7 +32,7 @@ public class CacheProxy {
             CacheProxy.instance.cache.put(element);
         } catch (Exception e){
             result=false;
-            Logger.error(CacheProxy.class, String.format("ehCache put failed, key=",key),e);
+            Logger.error(CacheProxy.class, String.format("ehCache put failed, key=%s",key),e);
         }
         return result;
     }
@@ -46,8 +46,22 @@ public class CacheProxy {
         try{
             return CacheProxy.instance.cache.get(key);
         } catch (Exception e){
-            Logger.error(CacheProxy.class, String.format("ehCache get failed, key=",key),e);
+            Logger.error(CacheProxy.class, String.format("ehCache get failed, key=%s",key),e);
         }
         return null;
+    }
+
+    /**
+     * 清除缓存key对应值
+     * @param key
+     * @return
+     */
+    public static boolean remove(Object key) {
+        try{
+            return CacheProxy.instance.cache.remove(key);
+        } catch (Exception e){
+            Logger.error(CacheProxy.class, String.format("ehCache remove failed, key=%s",key),e);
+        }
+        return false;
     }
 }

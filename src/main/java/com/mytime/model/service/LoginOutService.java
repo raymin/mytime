@@ -11,6 +11,7 @@ import com.mytime.view.utils.CookieWrapper;
 import com.mytime.view.vo.UserVO;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -28,15 +29,17 @@ public class LoginOutService {
 
 
     /**
-     * 用户登录处理
+     * 用户登录处理，根据用户名/密码判断用户信息，登录成功产生session/cookie/cache
      *
      * @param account
      * @param pwd
      * @param validateCode
      * @param request
+     * @param response
      * @return
      */
-    public UserVO login(String account, String pwd, String validateCode, HttpServletRequest request) {
+    public UserVO login(String account, String pwd, String validateCode,
+                        HttpServletRequest request, HttpServletResponse response) {
 
         //check输入内容
         //登录名/密码/验证码不能为空
@@ -112,8 +115,15 @@ public class LoginOutService {
         }
 
         UserVO userVo = new UserVO(userDto);
-        userVo.setRetCode(UserVO.RET_CODE_SUCCESS);
-        userVo.setRetMsg("登录成功");
+        boolean isCreated = createSessionAndCookie(request,response, userVo);
+        if(isCreated){
+            userVo.setRetCode(UserVO.RET_CODE_SUCCESS);
+            userVo.setRetMsg("登录成功");
+        } else {
+            logout(request, response);
+            userVo.setRetCode(UserVO.RET_CODE_LOGIC_ERROR);
+            userVo.setRetErrorMap(MapUtil.buildMap("login", "用户登录失败"));
+        }
 
         return userVo;
     }
@@ -143,6 +153,21 @@ public class LoginOutService {
     }
 
     /**
+     * 退出时清空session,cookie,cache中用户相关信息
+     *
+     * @param request
+     * @param response
+     */
+    public void logout(HttpServletRequest request, HttpServletResponse response){
+
+        request.getSession().removeAttribute(Constants.SESSION_LOGIN_USER);
+        CookieWrapper cookieWrapper = new CookieWrapper(request, response);
+        String ticketId = cookieWrapper.getCookieValue(Constants.COOKIE_KEY_UT);
+        CacheProxy.remove(ticketId);
+        cookieWrapper.clearCookie(ticketId, Constants.COOKIE_DOMAIN_ROOT);
+    }
+
+    /**
      * 保存登录用户session信息及产生cookie信息
      *
      * @param request
@@ -150,8 +175,8 @@ public class LoginOutService {
      * @param userVo
      * @return
      */
-    public boolean createSessionAndCookie(HttpServletRequest request, HttpServletResponse response,
-                                         UserVO userVo) {
+    private boolean createSessionAndCookie(HttpServletRequest request, HttpServletResponse response,
+                                            UserVO userVo) {
         boolean ret = false;
         try{
             request.getSession().setAttribute(Constants.SESSION_LOGIN_USER, userVo);

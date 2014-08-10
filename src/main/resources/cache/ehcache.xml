@@ -31,7 +31,7 @@
            overflowToDisk="false"
            diskPersistent="false"
            timeToIdleSeconds="0"
-           timeToLiveSeconds="300"
+           timeToLiveSeconds="7200"
            memoryStoreEvictionPolicy="LRU" />
 
 </ehcache>
