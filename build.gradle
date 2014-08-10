@@ -47,6 +47,9 @@ stopPort = Integer.valueOf(_stopPort)
 httpPort = Integer.valueOf(_httpPort)
 
 ext {
+    log4j_version = "1.2.17"
+    slf4j_log4j_version = "1.7.7"
+    log4j_version = "1.2.17"
     servlet_version = "2.5"
     gson_version = "1.7.1";
     joda_version = "1.6.2"
@@ -55,7 +58,6 @@ ext {
     velocity_version = "1.7"
     velocity_tools_version = "2.0"
     spring_version = "3.2.0.RELEASE"
-//ibatis_version = "2.3.4.726"
     mybatis_version = "3.2.7"
     mybatis_spring_version = "1.2.2"
     lucene_version = "4.9.0"
@@ -70,6 +72,9 @@ ext {
 
 //增加依赖
 dependencies {
+
+    def log4j_lib = ["log4j:log4j:$log4j_version",
+                    "org.slf4j:slf4j-log4j12:$slf4j_log4j_version"]
 
     def servlet_lib = ["javax.servlet:servlet-api:$servlet_version"]
 
@@ -94,7 +99,6 @@ dependencies {
             "org.springframework:spring-context:$spring_version",
             "org.springframework:spring-context-support:$spring_version"]
 
-//def ibatis_lib = ["org.apache.ibatis:ibatis-sqlmap:$ibatis_version"]
     def orm_lib = ["org.mybatis:mybatis:$mybatis_version",
             "org.mybatis:mybatis-spring:$mybatis_spring_version",
             "commons-dbcp:commons-dbcp:$dbcp_version",
@@ -121,7 +125,7 @@ dependencies {
     }
 
     providedCompile servlet_lib
-    compile common_lib, view_lib, spring_lib, orm_lib, search_lib, ehcache_lib, local_lib
+    compile log4j_lib, common_lib, view_lib, spring_lib, orm_lib, search_lib, ehcache_lib, local_lib
     testCompile test_lib
     emma emma_lib
 }

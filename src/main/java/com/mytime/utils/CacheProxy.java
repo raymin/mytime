@@ -1,22 +1,32 @@
 package com.mytime.utils;
 
 
+import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
-import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.net.URL;
+
+@Service
 public class CacheProxy {
+
+    //@Resource
+    private CacheManager cacheManager;
+
+    public static final String CACHE_LOGIN_USER = "cache.login";
 
     /**
      * cahce实例
      */
     private static CacheProxy instance = new CacheProxy();
 
-    private Ehcache cache;
+    //private CacheManager cacheManager;
 
     private CacheProxy(){
-        CacheManager cacheManager = CacheManager.create("config/ehcache.xml");
-        cache = cacheManager.getCache("ehCache");
+        //URL url = getClass().getResource("cache/ehcache.xml");
+        cacheManager = CacheManager.create("/home/rayminr/workspace/mytime/src/main/resources/cache/ehcache.xml");
     }
 
     /**
@@ -25,11 +35,12 @@ public class CacheProxy {
      * @param value
      * @return
      */
-    public static boolean put(Object key, Object value) {
+    public static boolean put(String cacheName, Object key, Object value) {
         boolean result=true;
         try{
+            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
             Element element = new Element(key, value);
-            CacheProxy.instance.cache.put(element);
+            cache.put(element);
         } catch (Exception e){
             result=false;
             Logger.error(CacheProxy.class, String.format("ehCache put failed, key=%s",key),e);
@@ -42,9 +53,10 @@ public class CacheProxy {
      * @param key
      * @return
      */
-    public static Object get(Object key) {
+    public static Object get(String cacheName, Object key) {
         try{
-            return CacheProxy.instance.cache.get(key);
+            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
+            return cache.get(key).getObjectValue();
         } catch (Exception e){
             Logger.error(CacheProxy.class, String.format("ehCache get failed, key=%s",key),e);
         }
@@ -56,9 +68,10 @@ public class CacheProxy {
      * @param key
      * @return
      */
-    public static boolean remove(Object key) {
+    public static boolean remove(String cacheName, Object key) {
         try{
-            return CacheProxy.instance.cache.remove(key);
+            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
+            return cache.remove(key);
         } catch (Exception e){
             Logger.error(CacheProxy.class, String.format("ehCache remove failed, key=%s",key),e);
         }

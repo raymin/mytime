@@ -8,11 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 
 /**
- * 必须登录拦截器
+ * 异步请求必须登录拦截器
  */
-public class MustLoginInterceptor implements HandlerInterceptor {
+public class AjaxMustLoginInterceptor implements HandlerInterceptor {
 
     @Resource
     private LoginOutService loginOutService;
@@ -28,7 +29,15 @@ public class MustLoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (!loginOutService.isLogin(request, response)) {
-            response.sendRedirect(request.getContextPath()+"/toLogin.do");
+            PrintWriter out = response.getWriter();
+            StringBuilder builder = new StringBuilder();
+            builder.append("<script type=\"text/javascript\" charset=\"UTF-8\">");
+            builder.append("alert(\"本系统需要您登录后才能使用\");");
+            builder.append("window.top.location.href=\"");
+            builder.append(request.getContextPath());
+            builder.append("/toLogin\";</script>");
+            out.print(builder.toString());
+            out.close();
             return false;
         }
         return true;

@@ -18,7 +18,7 @@ public class Constants {
     /*session user key*/
     public static final String SESSION_LOGIN_USER = "session.user";
     /*cookie 根域*/
-    public static final String COOKIE_DOMAIN_ROOT = "mytime";
+    public static final String COOKIE_DOMAIN_ROOT = "localhost";
 
     /** cookie ut 过期时间(单位秒) */
     public static final String COOKIE_KEY_UT = "ut";

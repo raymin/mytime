@@ -139,13 +139,15 @@ public class LoginOutService {
         if(sessionUserVo == null){
             return false;
         }
+        Logger.debug(this, String.format("sessionUserVo.id = %s", sessionUserVo.getId()));
+
         CookieWrapper cookieWrapper = new CookieWrapper(request, response);
         String ticketId = cookieWrapper.getCookieValue(Constants.COOKIE_KEY_UT);
         UserVO cacheUserVo = validateTicket(ticketId);
         if(cacheUserVo == null){
             return false;
         }
-
+        Logger.debug(this, String.format("sessionUserVo.id = %s, cacheUserVo.id = %s", sessionUserVo.getId(), cacheUserVo.getId()));
         if(cacheUserVo.getId() != sessionUserVo.getId()){
             return false;
         }
@@ -163,8 +165,10 @@ public class LoginOutService {
         request.getSession().removeAttribute(Constants.SESSION_LOGIN_USER);
         CookieWrapper cookieWrapper = new CookieWrapper(request, response);
         String ticketId = cookieWrapper.getCookieValue(Constants.COOKIE_KEY_UT);
-        CacheProxy.remove(ticketId);
-        cookieWrapper.clearCookie(ticketId, Constants.COOKIE_DOMAIN_ROOT);
+        if(MyString.isNotBlank(ticketId)){
+            CacheProxy.remove(CacheProxy.CACHE_LOGIN_USER, ticketId);
+            cookieWrapper.clearCookie(ticketId, Constants.COOKIE_DOMAIN_ROOT);
+        }
     }
 
     /**
@@ -200,7 +204,7 @@ public class LoginOutService {
         //产生ticket
         String ticketId = (MyString.getUUID() + Long.toString(userVo.getId(), 24)).toUpperCase();
         //根据ticket缓存登录用户信息到Cache
-        CacheProxy.put(ticketId,userVo);
+        CacheProxy.put(CacheProxy.CACHE_LOGIN_USER, ticketId,userVo);
         return ticketId;
     }
 
@@ -212,7 +216,7 @@ public class LoginOutService {
      */
     private UserVO validateTicket(String ticketId) {
 
-        Object cacheObj = CacheProxy.get(ticketId);
+        Object cacheObj = CacheProxy.get(CacheProxy.CACHE_LOGIN_USER, ticketId);
         if(cacheObj instanceof UserVO){
             UserVO userVO = (UserVO)cacheObj;
             if (userVO != null){

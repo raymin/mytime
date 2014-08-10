@@ -27,17 +27,17 @@
         </property>
     </bean>
 
-    <!-- 缓存配置 -->
-    <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+    <!--&lt;!&ndash; 缓存配置 &ndash;&gt;
+    <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" scope="singleton">
         <property name="configLocation"  value="classpath:cache/ehcache.xml"/>
     </bean>
-    <!-- 默认是cacheManager -->
+    &lt;!&ndash; 默认是cacheManager &ndash;&gt;
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
         <property name="cacheManager"  ref="cacheManagerFactory"/>
     </bean>
-    <!-- 支持缓存注解 -->
+    &lt;!&ndash; 支持缓存注解 &ndash;&gt;
     <cache:annotation-driven cache-manager="cacheManager" />
-
+-->
 
     <!-- 声明使用注解式事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
@@ -60,7 +60,7 @@
     <!-- 拦截器 -->
     <mvc:interceptors>
         <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
-        <bean class="com.mytime.view.interceptor.MustLoginInterceptor"/>
+        <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />-->
         <!-- 多个拦截器,顺序执行 -->
         <!--<mvc:interceptor>
             &lt;!&ndash; 如果不配置或/*,将拦截所有的Controller &ndash;&gt;
@@ -69,7 +69,10 @@
         </mvc:interceptor>-->
         <mvc:interceptor>
             <!-- 如果不配置或/*,将拦截所有的Controller -->
-            <mvc:mapping path="/ajax*/*"/>
+            <mvc:mapping path="/*/*"/>
+            <mvc:exclude-mapping path="/toLogin.do"/>
+            <mvc:exclude-mapping path="/login.do"/>
+            <mvc:exclude-mapping path="/logout.do"/>
             <bean class="com.mytime.view.interceptor.MustLoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
