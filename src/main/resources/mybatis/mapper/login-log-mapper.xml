@@ -5,6 +5,7 @@
     <insert id="insert" parameterType="LoginLogDTO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO T_LOGIN_LOG
         (
+            LOGIN_SRC,
             LOGIN_TYPE,
             LOGIN_ACCOUNT,
             LOGIN_PWD,
@@ -14,6 +15,7 @@
         )
         VALUES
         (
+            #{loginSrc},
             #{loginType},
             #{loginAccount},
             #{loginPwd},

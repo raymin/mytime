@@ -7,8 +7,10 @@ public class LoginLogDTO extends BaseDTO {
     // 对应数据库表主键
     private Long id;
     // 登录用户来源
+    private String loginSrc;
+    // 登录用户类型(用户名/手机/邮箱)
     private String loginType;
-    // 登录用户帐号(用户名/手机/邮箱)
+    // 登录用户帐号
     private String loginAccount;
     // 登录密码（加密后）
     private String loginPwd;
@@ -25,6 +27,14 @@ public class LoginLogDTO extends BaseDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getLoginSrc() {
+        return loginSrc;
+    }
+
+    public void setLoginSrc(String loginSrc) {
+        this.loginSrc = loginSrc;
     }
 
     public String getLoginType() {

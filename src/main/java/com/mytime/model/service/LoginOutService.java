@@ -104,6 +104,7 @@ public class LoginOutService {
             String loginAgent = WebUtil.getUserAgent(request);
 
             //登录成功，更新登录日志
+            loginLogDto.setLoginSrc("PC");
             loginLogDto.setLoginAccount(account);
             loginLogDto.setLoginPwd(CipherUtil.generatePassword(pwd));
             loginLogDto.setLoginIp(loginIp);

@@ -39,10 +39,10 @@ public class MyString extends StringUtils {
      * @return
      */
     public static String trimToLen(String str, int length) {
-        if (isBlank(str)) {
+        if (isBlank(str) || str.length() <= length) {
             return str;
         } else {
-            return substring(str, length);
+            return substring(str, 0, length);
         }
     }
 

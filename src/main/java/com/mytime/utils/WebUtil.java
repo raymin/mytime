@@ -78,7 +78,7 @@ public class WebUtil {
      * @return
      */
     public static String getUserAgent(HttpServletRequest request) {
-        String agentInfo = MyString.trimToLen(request.getHeader("user-agent"), 512);
+        String agentInfo = MyString.trimToLen(request.getHeader("User-Agent"), 512);
         return agentInfo;
     }
 }

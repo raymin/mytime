@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bcfd887-07a2-4204-86fa-14cfc10e1001" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/AjaxMustLoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql" afterPath="$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/MustLoginInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/MustLoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/view/filter/UserContextFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/view/filter/UserContextFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/cache/ehcache.xml" afterPath="$PROJECT_DIR$/src/main/resources/cache/ehcache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mytime.iml" afterPath="$PROJECT_DIR$/mytime.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mytime.ipr" afterPath="$PROJECT_DIR$/mytime.ipr" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mytime.iws" afterPath="$PROJECT_DIR$/mytime.iws" />
     </list>
     <ignored path="mytime.iws" />
@@ -69,7 +63,38 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" line="102" class="com.mytime.model.service.LoginOutService" package="com.mytime.model.service">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" line="103" class="com.mytime.model.service.LoginOutService" package="com.mytime.model.service">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -82,52 +107,25 @@
       <file leaf-file-name="LoginOutController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="43" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="1008">
+            <state line="32" column="42" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="828">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <file leaf-file-name="WebUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="72" selection-start="3473" selection-end="3473" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="1530">
+            <state line="80" column="39" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1512">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CacheProxy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java">
+      <file leaf-file-name="MyString.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="60" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="1440">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MustLoginInterceptor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/MustLoginInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1008">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="59" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="107" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="722" max-vertical-offset="4122">
+            <state line="45" column="51" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -136,35 +134,41 @@
       <file leaf-file-name="LoginOutService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="14" selection-start="5856" selection-end="5856" vertical-scroll-proportion="0.0" vertical-offset="2387" max-vertical-offset="4374">
+            <state line="106" column="54" selection-start="3754" selection-end="3754" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="4392">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VelocityToolboxViewExt.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/utils/VelocityToolboxViewExt.java">
+      <file leaf-file-name="002_create_login_log.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="75" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="702">
+            <state line="4" column="16" selection-start="148" selection-end="148" vertical-scroll-proportion="0.185567" vertical-offset="0" max-vertical-offset="388">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CookieWrapper.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/utils/CookieWrapper.java">
+      <file leaf-file-name="LoginLogDTO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="85" selection-start="190" selection-end="190" vertical-scroll-proportion="0.21386139" vertical-offset="0" max-vertical-offset="2358">
-              <folding />
+            <state line="31" column="33" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="1170">
+              <folding>
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#694#695#0" expanded="true" />
+                <element signature="e#734#735#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java">
+      <file leaf-file-name="login-log-mapper.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="64" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="666">
-              <folding />
+            <state line="18" column="29" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="648">
+              <folding>
+                <marker date="1407677882575" expanded="true" signature="281:707" placeholder="INSERT INTO ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,16 +223,11 @@
         <option value="$PROJECT_DIR$/db/001_ddl/005_create_post_tag.sql" />
         <option value="$PROJECT_DIR$/db/001_ddl/006_create_comment.sql" />
         <option value="$PROJECT_DIR$/db/001_ddl/001_create_user.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java" />
-        <option value="$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/mytime/utils/MyStringTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/utils/CookieWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/filter/UserContextFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/cache/ehcache.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/AjaxMustLoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
@@ -237,6 +236,11 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java" />
+        <option value="$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" />
       </list>
     </option>
@@ -294,10 +298,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="mytime" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -623,6 +623,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1174,7 +1246,7 @@
       <workItem from="1407592585518" duration="8433000" />
       <workItem from="1407631242867" duration="11384000" />
       <workItem from="1407675689267" duration="16000" />
-      <workItem from="1407675713091" duration="1516000" />
+      <workItem from="1407675713091" duration="2271000" />
     </task>
     <task id="LOCAL-00001" summary="add CKEditor&#10;">
       <created>1406970531103</created>
@@ -1204,11 +1276,15 @@
       <created>1407634868476</created>
       <updated>1407634868476</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="mod log4j &amp; mustLoginInterceptor&#10;">
+      <created>1407677271330</created>
+      <updated>1407677271330</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72791000" />
+    <option name="totallyTimeSpent" value="73546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1024" height="718" extended-state="0" />
@@ -1221,19 +1297,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14453782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12474438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50756305" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28067228" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22016807" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22699386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24744377" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25882354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.303681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25882354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1241,7 +1318,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14957984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22016807" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7403035" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1257,18 +1333,18 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.030674847" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.303681" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25882354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14453782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14957984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50756305" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28067228" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22016807" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22699386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1297,7 +1373,8 @@
     <MESSAGE value="add ddl&#10;" />
     <MESSAGE value="mod login logic" />
     <MESSAGE value="mod Interceptor&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="mod Interceptor&#10;" />
+    <MESSAGE value="mod log4j &amp; mustLoginInterceptor&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="mod log4j &amp; mustLoginInterceptor&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1413,19 +1490,9 @@
         <state line="9" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.23247233" vertical-offset="0" max-vertical-offset="542" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="67" selection-start="2114" selection-end="2114" vertical-scroll-proportion="0.76568264" vertical-offset="683" max-vertical-offset="1512" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/mytime/utils/MyStringTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="54" selection-start="27" selection-end="27" vertical-scroll-proportion="0.06642067" vertical-offset="0" max-vertical-offset="1422" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="249" selection-end="249" vertical-scroll-proportion="0.26568267" vertical-offset="0" max-vertical-offset="1080" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/UserService.java">
@@ -1462,57 +1529,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="26" selection-start="367" selection-end="374" vertical-scroll-proportion="-8.448276" vertical-offset="61" max-vertical-offset="990">
-          <folding>
-            <element signature="e#450#451#0" expanded="false" />
-            <element signature="e#475#476#0" expanded="false" />
-            <element signature="e#509#510#0" expanded="false" />
-            <element signature="e#537#538#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#605#606#0" expanded="false" />
-            <element signature="e#655#656#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#736#737#0" expanded="false" />
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-            <element signature="e#910#911#0" expanded="false" />
-            <element signature="e#941#942#0" expanded="false" />
-            <element signature="e#989#990#0" expanded="false" />
-            <element signature="e#1029#1030#0" expanded="false" />
-            <element signature="e#1063#1064#0" expanded="false" />
-            <element signature="e#1095#1096#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1185#1186#0" expanded="false" />
-            <element signature="e#1219#1220#0" expanded="false" />
-            <element signature="e#1249#1250#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1370#1371#0" expanded="false" />
-            <element signature="e#1403#1404#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="102" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="86" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="77" selection-start="412" selection-end="412" vertical-scroll-proportion="-6.206897" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/unitils.properties">
@@ -1567,13 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="43" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="107" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="722" max-vertical-offset="4122">
@@ -1611,21 +1623,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="64" selection-start="951" selection-end="951" vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="14" selection-start="5856" selection-end="5856" vertical-scroll-proportion="0.0" vertical-offset="2387" max-vertical-offset="4374">
+        <state line="25" column="64" selection-start="951" selection-end="951" vertical-scroll-proportion="0.60940325" vertical-offset="113" max-vertical-offset="666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/utils/CookieWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="85" selection-start="190" selection-end="190" vertical-scroll-proportion="0.21386139" vertical-offset="0" max-vertical-offset="2358">
+        <state line="8" column="85" selection-start="190" selection-end="190" vertical-scroll-proportion="0.19529837" vertical-offset="0" max-vertical-offset="2358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="51" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="39" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="42" selection-start="1307" selection-end="1307" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="828">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="33" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="1170">
+          <folding>
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0" vertical-offset="83" max-vertical-offset="648">
+          <folding>
+            <marker date="1407677882575" expanded="true" signature="281:707" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="54" selection-start="3754" selection-end="3754" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="4392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="16" selection-start="148" selection-end="148" vertical-scroll-proportion="0.185567" vertical-offset="0" max-vertical-offset="388">
           <folding />
         </state>
       </provider>
