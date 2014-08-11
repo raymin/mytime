@@ -5,10 +5,7 @@ import com.mytime.model.service.UserService;
 import com.mytime.utils.WebUtil;
 import com.mytime.view.vo.UserVO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -51,6 +48,15 @@ public class UserController {
     public ModelAndView showUser(@RequestParam(value = "id") Long id) throws Exception {
         UserDTO userDto = userService.getUserById(id);
         return new ModelAndView("user/showUser", "user", userDto);
+    }
+
+    @RequestMapping(value = "/showUser.ajax")
+    @ResponseBody
+    public String AjaxShowUser(@RequestParam(value = "id") Long id) throws Exception {
+        UserDTO userDto = userService.getUserById(id);
+        UserVO userVo = new UserVO(userDto);
+        userVo.setRetCode(UserVO.RET_CODE_SUCCESS);
+        return userVo.toJson();
     }
 
 }

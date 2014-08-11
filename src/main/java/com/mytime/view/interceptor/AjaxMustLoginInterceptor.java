@@ -2,6 +2,7 @@ package com.mytime.view.interceptor;
 
 
 import com.mytime.model.service.LoginOutService;
+import com.mytime.view.vo.AjaxResult;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,13 +31,8 @@ public class AjaxMustLoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (!loginOutService.isLogin(request, response)) {
             PrintWriter out = response.getWriter();
-            StringBuilder builder = new StringBuilder();
-            builder.append("<script type=\"text/javascript\" charset=\"UTF-8\">");
-            builder.append("alert(\"本系统需要您登录后才能使用\");");
-            builder.append("window.top.location.href=\"");
-            builder.append(request.getContextPath());
-            builder.append("/toLogin\";</script>");
-            out.print(builder.toString());
+            AjaxResult result = new AjaxResult(AjaxResult.RET_CODE_CHECK_ERROR, "not login");
+            out.print(result.toJson());
             out.close();
             return false;
         }

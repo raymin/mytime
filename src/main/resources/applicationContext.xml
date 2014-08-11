@@ -62,18 +62,16 @@
         <!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->
         <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />-->
         <!-- 多个拦截器,顺序执行 -->
-        <!--<mvc:interceptor>
-            &lt;!&ndash; 如果不配置或/*,将拦截所有的Controller &ndash;&gt;
-            <mvc:mapping path="*.do"/>
-            <bean class="com.mytime.view.interceptor.MustLoginInterceptoror"/>
-        </mvc:interceptor>-->
         <mvc:interceptor>
-            <!-- 如果不配置或/*,将拦截所有的Controller -->
-            <mvc:mapping path="/*/*"/>
+            <mvc:mapping path="/*/*.do"/>
             <mvc:exclude-mapping path="/toLogin.do"/>
             <mvc:exclude-mapping path="/login.do"/>
             <mvc:exclude-mapping path="/logout.do"/>
             <bean class="com.mytime.view.interceptor.MustLoginInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/*/*.ajax"/>
+            <bean class="com.mytime.view.interceptor.AjaxMustLoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 

@@ -1,7 +1,7 @@
-package com.mytime.view.json;
+package com.mytime.view.vo;
 
 
-public class EventJson extends BaseJson {
+public class EventJson extends BaseVO {
 
     private String id;
     private String title;

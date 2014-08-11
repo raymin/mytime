@@ -6,27 +6,18 @@ import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.net.URL;
 
 @Service
 public class CacheProxy {
 
-    //@Resource
-    private CacheManager cacheManager;
-
     public static final String CACHE_LOGIN_USER = "cache.login";
 
-    /**
-     * cahce实例
-     */
-    private static CacheProxy instance = new CacheProxy();
-
-    //private CacheManager cacheManager;
+    private static CacheManager cacheManager;
 
     private CacheProxy(){
-        //URL url = getClass().getResource("cache/ehcache.xml");
-        cacheManager = CacheManager.create("/home/rayminr/workspace/mytime/src/main/resources/cache/ehcache.xml");
+        URL url = getClass().getResource("/cache/ehcache.xml");
+        cacheManager = CacheManager.create(url);
     }
 
     /**
@@ -38,7 +29,7 @@ public class CacheProxy {
     public static boolean put(String cacheName, Object key, Object value) {
         boolean result=true;
         try{
-            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
+            Cache cache = cacheManager.getCache(cacheName);
             Element element = new Element(key, value);
             cache.put(element);
         } catch (Exception e){
@@ -55,7 +46,7 @@ public class CacheProxy {
      */
     public static Object get(String cacheName, Object key) {
         try{
-            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
+            Cache cache = cacheManager.getCache(cacheName);
             return cache.get(key).getObjectValue();
         } catch (Exception e){
             Logger.error(CacheProxy.class, String.format("ehCache get failed, key=%s",key),e);
@@ -70,7 +61,7 @@ public class CacheProxy {
      */
     public static boolean remove(String cacheName, Object key) {
         try{
-            Cache cache = CacheProxy.instance.cacheManager.getCache(cacheName);
+            Cache cache = cacheManager.getCache(cacheName);
             return cache.remove(key);
         } catch (Exception e){
             Logger.error(CacheProxy.class, String.format("ehCache remove failed, key=%s",key),e);

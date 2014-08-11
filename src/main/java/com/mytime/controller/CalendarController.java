@@ -2,7 +2,7 @@ package com.mytime.controller;
 
 import com.google.gson.Gson;
 import com.mytime.utils.DateUtil;
-import com.mytime.view.json.EventJson;
+import com.mytime.view.vo.EventJson;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

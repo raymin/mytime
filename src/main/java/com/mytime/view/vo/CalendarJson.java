@@ -1,9 +1,9 @@
-package com.mytime.view.json;
+package com.mytime.view.vo;
 
 
 import java.util.List;
 
-public class CalendarJson extends BaseJson {
+public class CalendarJson extends BaseVO {
 
     private String userId;
     private String defaultDate;

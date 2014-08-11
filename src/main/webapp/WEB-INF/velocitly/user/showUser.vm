@@ -1,6 +1,17 @@
 <html>
 <head>
     <title>title</title>
+    <script type="text/javascript" src="/mytime/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#lnk").click(function(){
+                $.post("/mytime/user/showUser.ajax", { id: "1"},
+                        function(data){
+                            alert("Data Loaded: " + data.retCode);
+                        },"json");
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -16,7 +27,7 @@
     </tr>
     <tr>
         <td>
-            <a href="user/showUser.do?id=${user.id}">${user.id}</a>
+            <button id="lnk" type="button">详细</button>
         </td>
         <td>${user.name}</td>
         <td>${user.nickName}</td>
