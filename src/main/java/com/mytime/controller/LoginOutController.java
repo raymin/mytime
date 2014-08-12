@@ -18,11 +18,26 @@ public class LoginOutController {
     @Resource
     private LoginOutService loginOutService;
 
+    /**
+     * 跳转到登录页面
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/toLogin.do", method = RequestMethod.GET)
     public ModelAndView toLogin() throws Exception {
         return new ModelAndView("user/login");
     }
 
+    /**
+     * 登录
+     * @param account
+     * @param pwd
+     * @param validateCode
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
     public ModelAndView login(@RequestParam(value = "account") String account,
                               @RequestParam(value = "pwd") String pwd,
@@ -38,6 +53,13 @@ public class LoginOutController {
         }
     }
 
+    /**
+     * 退出登录
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/logout.do", method = RequestMethod.GET)
     public ModelAndView logout(HttpServletRequest request,
                        HttpServletResponse response) throws Exception {

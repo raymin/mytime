@@ -18,17 +18,23 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(value = "/toLogin.do", method = RequestMethod.GET)
-    public ModelAndView toLogin() throws Exception {
-        System.out.println("/toLogin.do");
-        return new ModelAndView("user/login");
-    }
-
+    /**
+     * 跳转到用户注册页面
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/addUser.do", method = RequestMethod.GET)
     public ModelAndView register() throws Exception {
         return new ModelAndView("user/addUser");
     }
 
+    /**
+     * 用户注册
+     * @param userDto
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/register.do", method = RequestMethod.POST)
     public ModelAndView register(@ModelAttribute("registerUser") UserDTO userDto, HttpServletRequest request) throws Exception {
         String customerIp = WebUtil.getRemoteIp(request);
@@ -44,12 +50,24 @@ public class UserController {
         }
     }
 
+    /**
+     * 显示用户信息
+     * @param id
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/showUser.do")
     public ModelAndView showUser(@RequestParam(value = "id") Long id) throws Exception {
         UserDTO userDto = userService.getUserById(id);
         return new ModelAndView("user/showUser", "user", userDto);
     }
 
+    /**
+     * 显示用户信息（异步接口）
+     * @param id
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/showUser.ajax")
     @ResponseBody
     public String AjaxShowUser(@RequestParam(value = "id") Long id) throws Exception {
