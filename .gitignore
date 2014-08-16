@@ -2,8 +2,8 @@
 *.ipr
 *.iws
 *.iml
-.gradle*
-build/*
+.gradle
+build
 out
 .idea
 .classpath
