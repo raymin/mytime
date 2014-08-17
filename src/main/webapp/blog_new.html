@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>留下脚印</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/menu.css" rel="stylesheet" type="text/css" />
+<link href="css/slider.css" rel="stylesheet" type="text/css" />
+<link href="css/css_slider1/default.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/css_slider1/nivo-slider.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/hover.css" rel="stylesheet" type="text/css" />
+<link href="css/columns.css" rel="stylesheet" type="text/css" />
+<link href="css/hover_image.css" rel="stylesheet" type="text/css" />
+<link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+<link href="css/buttons.css" rel="stylesheet" type="text/css" />
+<link href="css/widgets.css" rel="stylesheet" type="text/css" />
+<link href="css/light.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/stimenu.css" />
+<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+<!--[if IE 8]>
+<link href="css/style_IE.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script type="text/javascript" src="js/ie.html5.js"></script>
+
+<!-- JQUERY -->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+<!-- JQUERY_UI -->
+<script type="text/javascript" src="js/jquery.ui.core.js"></script>
+
+<!-- SLIDER_NIVO --> 
+<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('.nivo_slider').nivoSlider({
+			manualAdvance: true,
+			directionNavHide:true});
+    });
+</script>
+
+<!-- MENU -->
+<script type="text/javascript" src="js/menu.js"></script>
+
+<!-- HOVER_BUTTON -->
+<script type="text/javascript" src="js/hover.js"></script>
+<script type="text/javascript" src="js/buttons.js"></script>
+
+<!-- IMAGE -->
+<script src="js/image.js" type="text/javascript"> </script>
+<script src="js/lightbox.js" type="text/javascript"></script>
+<script src="js/jquery.capSlide.js" type="text/javascript"></script>
+
+<!-- GALLERY -->
+<script src="js/lazyload.js" type="text/javascript"></script>
+<script src="js/gallery.js" type="text/javascript"> </script>
+<script src="js/jquery.masonary.js" type="text/javascript"> </script>
+<script src="ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="ckfinder/ckfinder.js" type="text/javascript"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+<!-- BEGIN menu -->
+<header class="header_silverbackground">
+    <div class="menu">
+        <a class="logo" href="index.html"><img src="images/logo.png" alt="时间都去哪了" /></a>
+
+        <div class="blockeasing-wrapp">
+            <h6 class="blockeasing-header">Menu</h6>
+            <ul class="blockeasing">
+                <li><a href="index.html">成长足迹</a></li>
+                <li class="current"><a href="blog_new.html">留下脚印</a></li>
+                <li><a href="bolg_list.html">我的日历</a></li>
+                <li><a href="contact.html">怎样的我</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<!-- /END menu -->
+
+<!-- BEGIN middle part -->
+<section id="content">
+<div class="href_path_link"><h6>您所在位置: <a href="index.html">rayminr</a> > 留下脚印</h6></div>
+<div class="blogcontent">
+    <form  id="formEditor" name="formEditor" action="/mytime/post/save.ajax" method="post" >
+        <div class="href_path_about"><h3>标题：<input class="ckeditor" name="postTtitle" size="100"/></h3></div>
+        <textarea class="ckeditor" name="postContent"></textarea>
+    <a class="con_button con_button2" href="javascript:formEditor.submit();"><span class="con_button_text">保存日志</span><span class="con_button_arrow"><span>保存日志</span></span></a>
+    </form>
+</div>
+    <script type="text/javascript">
+        // This is a check for the CKEditor class. If not defined, the paths must be checked.
+        if ( typeof CKEDITOR == 'undefined' )
+        {
+            document.write(
+                    '<strong><span style="color: #ff0000">Error</span>: CKEditor not found</strong>.' +
+                            'This sample assumes that CKEditor (not included with CKFinder) is installed in' +
+                            'the "/ckeditor/" path. If you have it installed in a different place, just edit' +
+                            'this file, changing the wrong paths in the &lt;head&gt; (line 5) and the "BasePath"' +
+                            'value (line 32).' ) ;
+        }
+        else
+        {
+            var editor = CKEDITOR.replace( 'postContent' );
+            editor.setData( '在这里添加您的日志' );
+
+            // Just call CKFinder.setupCKEditor and pass the CKEditor instance as the first argument.
+            // The second parameter (optional), is the path for the CKFinder installation (default = "/ckfinder/").
+            CKFinder.setupCKEditor( editor, '/mytime/ckfinder/' ) ;
+
+            // It is also possible to pass an object with selected CKFinder properties as a second argument.
+            // CKFinder.setupCKEditor( editor, { basePath : '../', skin : 'v1' } ) ;
+        }
+    </script>
+
+<div class="clear"></div>
+</section>
+<!-- /END middle part -->
+
+<!-- BEGIN footer -->
+<footer id="footer">
+    <div id="footer-wrapper">
+        <div class="footer-column">
+            <div class="widget">
+                <h5>联系我</h5>
+                <ul>
+                    <li><a href="http://www.91time.me" class="footer_link">www.91time.me</a></li>
+                    <li><a href="mailto:rayminr@91time.me" class="footer_link">rayminr@91time.me</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-column last">
+            <div class="widget">
+                <h5>关注我</h5>
+                <div class="clear"></div>
+                <!-- BEGIN social icon -->
+                <div class="fadehover hoverfooter">
+                    <a class="a" href="#"><img src="images/f.png" alt="facebook" /></a>
+                    <a class="b" href="#"><img src="images/f1.png" alt="facebook" /></a>
+                </div>
+                <div class="fadehover hoverfooter">
+                    <a class="a" href="#"><img src="images/t.png" alt="twitter" /></a>
+                    <a class="b" href="#"><img src="images/t1.png" alt="" /></a>
+                </div>
+                <div class="fadehover hoverfooter">
+                    <a class="a" href="#"><img src="images/g.png" alt="google+" /></a>
+                    <a class="b" href="#"><img src="images/g1.png" alt="google+" /></a>
+                </div>
+                <div class="fadehover hoverfooter">
+                    <a class="a" href="#"><img src="images/r.png" alt="rss" /></a>
+                    <a class="b" href="#"><img src="images/r1.png" alt="rss" /></a>
+                </div>
+                <!-- /END social icon -->
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!-- /END footer -->
+
+</body>
+</html>
