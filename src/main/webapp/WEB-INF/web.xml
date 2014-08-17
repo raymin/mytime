@@ -88,11 +88,11 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/*.do</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/*.ajax</url-pattern>
+        <url-pattern>*.ajax</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>default</servlet-name>

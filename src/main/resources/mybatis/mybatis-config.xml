@@ -4,11 +4,13 @@
 
     <typeAliases>
         <typeAlias alias="UserDTO" type="com.mytime.model.dto.UserDTO"/>
+        <typeAlias alias="PostDTO" type="com.mytime.model.dto.PostDTO"/>
         <typeAlias alias="LoginLogDTO" type="com.mytime.model.dto.LoginLogDTO"/>
     </typeAliases>
 
     <mappers>
         <mapper resource="mybatis/mapper/user-mapper.xml"/>
+        <mapper resource="mybatis/mapper/post-mapper.xml"/>
         <mapper resource="mybatis/mapper/login-log-mapper.xml"/>
     </mappers>
 </configuration>

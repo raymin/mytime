@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7bcfd887-07a2-4204-86fa-14cfc10e1001" name="Default" comment="mod ckeditor submit&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/controller/PostController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/PostDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/dao/PostDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/enums/PostEnum.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/service/PostService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/PostVO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/edit.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/list.vm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mytime.iws" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/post-mapper.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/blog_new.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/001_ddl/003_create_post.sql" afterPath="$PROJECT_DIR$/db/001_ddl/003_create_post.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/UserVO.java" afterPath="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/UserVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/blog.html" afterPath="$PROJECT_DIR$/src/main/webapp/blog.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/header.html" afterPath="$PROJECT_DIR$/src/main/webapp/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+    </list>
+    <ignored path="mytime.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="mytime" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="PostController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/PostController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="0" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1710">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/PostService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="27" selection-start="3103" selection-end="3103" vertical-scroll-proportion="0.51606804" vertical-offset="1545" max-vertical-offset="2304">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3423#3431#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostVO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/PostVO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="9" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="1566">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.vm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/edit.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="76" selection-start="4040" selection-end="4040" vertical-scroll-proportion="-10.148149" vertical-offset="1436" max-vertical-offset="3222">
+              <folding>
+                <marker date="1408286645725" expanded="false" signature="4697:4711" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="55" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post-mapper.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/post-mapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="9" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1692">
+              <folding>
+                <marker date="1408285536546" expanded="true" signature="826:1276" placeholder="INSERT INTO ..." />
+                <marker date="1408285536546" expanded="true" signature="1349:1792" placeholder="UPDATE T_POS..." />
+                <marker date="1408285536546" expanded="true" signature="1890:1948" placeholder="..." />
+                <marker date="1408285536546" expanded="true" signature="1900:1935" placeholder="SELECT * FRO..T_POST..." />
+                <marker date="1408285536546" expanded="true" signature="2033:2060" placeholder="SELECT COUNT..T_POST..." />
+                <marker date="1408285536546" expanded="true" signature="2194:2214" placeholder="SELECT * FRO..T_POST..." />
+                <marker date="1408285536546" expanded="true" signature="2595:2652" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.vm" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/list.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/db/001_ddl/004_create_tag.sql" />
+        <option value="$PROJECT_DIR$/db/001_ddl/005_create_post_tag.sql" />
+        <option value="$PROJECT_DIR$/db/001_ddl/006_create_comment.sql" />
+        <option value="$PROJECT_DIR$/db/001_ddl/001_create_user.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mytime/utils/MyStringTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/utils/CookieWrapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/filter/UserContextFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/cache/ehcache.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/MustLoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java" />
+        <option value="$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/CalendarJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/EventJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/AjaxResult.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/blog.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/BaseVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/BaseDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/AjaxMustLoginInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/user/showUser.vm" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/ckfinder-config.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/webapp/header.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/footer.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/new_blog.vm" />
+        <option value="$PROJECT_DIR$/src/main/webapp/new_blog.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dao/PostDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/enums/PostEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/new.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/dto/PostDTO.java" />
+        <option value="$PROJECT_DIR$/db/001_ddl/003_create_post.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/UserVO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/post-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/edit.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/view/vo/PostVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mytime/model/service/PostService.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="25" />
+    <option name="width" value="1024" />
+    <option name="height" value="718" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mytime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mytime.model.dto.enums" />
+      <recent name="com.mytime.view.vo" />
+      <recent name="com.mytime.model.service" />
+      <recent name="com.mytime.model.dao" />
+      <recent name="com.mytime.model.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mybatis/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/db/001_ddl" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/images/lightbox" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Remote.mytime">
+    <configuration default="false" name="MyStringTest.testMobile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mytime.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mytime" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.mytime.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.mytime.utils.MyStringTest" />
+      <option name="METHOD_NAME" value="testMobile" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyStringTest.testName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mytime.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mytime" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.mytime.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.mytime.utils.MyStringTest" />
+      <option name="METHOD_NAME" value="testName" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyStringTest.testPwd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mytime.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mytime" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="com.mytime.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.mytime.utils.MyStringTest" />
+      <option name="METHOD_NAME" value="testPwd" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyStringTest.getUUID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.mytime.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mytime" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.mytime.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.mytime.utils.MyStringTest" />
+      <option name="METHOD_NAME" value="getUUID" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_jetty.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="mytime" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_jetty.sh" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <module name="mytime" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mytime" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="27002" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="27002" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Remote.mytime" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MyStringTest.testMobile" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MyStringTest.testName" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MyStringTest.testPwd" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MyStringTest.getUUID" />
+      <item index="5" class="java.lang.String" itemvalue="Bash.run_jetty.sh" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Bash.run_jetty.sh" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MyStringTest.getUUID" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MyStringTest.testPwd" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MyStringTest.testName" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MyStringTest.testMobile" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bcfd887-07a2-4204-86fa-14cfc10e1001" name="Default" comment="" />
+      <created>1405326883044</created>
+      <updated>1405326883044</updated>
+      <workItem from="1405697150665" duration="897000" />
+      <workItem from="1405739120495" duration="1807000" />
+      <workItem from="1405825994947" duration="26054000" />
+      <workItem from="1405857083809" duration="6462000" />
+      <workItem from="1406967252863" duration="4191000" />
+      <workItem from="1406975552481" duration="7492000" />
+      <workItem from="1407032718420" duration="19000" />
+      <workItem from="1407244517594" duration="99000" />
+      <workItem from="1407329068352" duration="593000" />
+      <workItem from="1407418199690" duration="2241000" />
+      <workItem from="1407590951807" duration="1587000" />
+      <workItem from="1407592585518" duration="8433000" />
+      <workItem from="1407631242867" duration="11384000" />
+      <workItem from="1407675689267" duration="16000" />
+      <workItem from="1407675713091" duration="2322000" />
+      <workItem from="1407760985698" duration="3686000" />
+      <workItem from="1408195377168" duration="186000" />
+      <workItem from="1408195638630" duration="2083000" />
+      <workItem from="1408198183927" duration="128000" />
+      <workItem from="1408198340801" duration="134000" />
+      <workItem from="1408198542090" duration="98000" />
+      <workItem from="1408238814015" duration="18334000" />
+    </task>
+    <task id="LOCAL-00001" summary="add CKEditor&#10;">
+      <created>1406970531103</created>
+      <updated>1406970531103</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add CKFinder">
+      <created>1406985149081</created>
+      <updated>1406985149081</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change CKEditor to 4.4.3-full&#10;">
+      <created>1406986274489</created>
+      <updated>1406986274489</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add jquery js&#10;">
+      <created>1407029507948</created>
+      <updated>1407029507948</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add ddl&#10;">
+      <created>1407420417818</created>
+      <updated>1407420417818</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mod login logic">
+      <created>1407601315573</created>
+      <updated>1407601315573</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mod Interceptor&#10;">
+      <created>1407634868476</created>
+      <updated>1407634868476</updated>
+    </task>
+    <task id="LOCAL-00008" summary="mod log4j &amp; mustLoginInterceptor&#10;">
+      <created>1407677271330</created>
+      <updated>1407677271330</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mod login log&#10;">
+      <created>1407677994579</created>
+      <updated>1407677994579</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mod gitignore&#10;">
+      <created>1408198567511</created>
+      <updated>1408198567511</updated>
+    </task>
+    <task id="LOCAL-00011" summary="mod blog_new&#10;">
+      <created>1408274802080</created>
+      <updated>1408274802080</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="98246000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1024" height="718" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4688027" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14453782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14957984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32310838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5647059" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22016807" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22699386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.398773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17142858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7403035" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4688027" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32310838" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277311" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.398773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17142858" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14453782" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14957984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5647059" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22016807" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22699386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7403035" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="add CKEditor&#10;" />
+    <MESSAGE value="add CKFinder" />
+    <MESSAGE value="change CKEditor to 4.4.3-full&#10;" />
+    <MESSAGE value="add jquery js&#10;" />
+    <MESSAGE value="add ddl&#10;" />
+    <MESSAGE value="mod login logic" />
+    <MESSAGE value="mod Interceptor&#10;" />
+    <MESSAGE value="mod log4j &amp; mustLoginInterceptor&#10;" />
+    <MESSAGE value="mod login log&#10;" />
+    <MESSAGE value="mod gitignore&#10;" />
+    <MESSAGE value="mod blog_new&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="mod blog_new&#10;" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="64" selection-start="951" selection-end="951" vertical-scroll-proportion="0.60940325" vertical-offset="113" max-vertical-offset="666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/utils/CookieWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="85" selection-start="190" selection-end="190" vertical-scroll-proportion="0.19529837" vertical-offset="0" max-vertical-offset="2358" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/MyString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="51" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/WebUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="39" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/LoginLogDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="33" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="1170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/login-log-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="567" selection-end="567" vertical-scroll-proportion="0.4358047" vertical-offset="83" max-vertical-offset="648" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/001_ddl/002_create_login_log.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="16" selection-start="148" selection-end="148" vertical-scroll-proportion="0.12720849" vertical-offset="0" max-vertical-offset="566" />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/jdk1.6.0_45/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2068" column="24" selection-start="87607" selection-end="87607" vertical-scroll-proportion="0.0" vertical-offset="35684" max-vertical-offset="54954" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/utils/CacheProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1386" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/MustLoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0" vertical-offset="193" max-vertical-offset="1008" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/CalendarJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/EventJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="3" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/AjaxResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="75" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/interceptor/AjaxMustLoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="41" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1062" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="84" selection-start="2127" selection-end="2127" vertical-scroll-proportion="0.0" vertical-offset="452" max-vertical-offset="1080" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="73" selection-start="3240" selection-end="3240" vertical-scroll-proportion="0.5" vertical-offset="942" max-vertical-offset="1494" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="107" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="4122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_jetty.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="553">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ckfinder-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="20" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="15" selection-end="15" vertical-scroll-proportion="0.06360424" vertical-offset="0" max-vertical-offset="566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/common/macro.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/common/pageFooter.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="641" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="45" selection-start="0" selection-end="1841" vertical-scroll-proportion="-17.25926" vertical-offset="290" max-vertical-offset="864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/blog_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="0" selection-start="5584" selection-end="5703" vertical-scroll-proportion="-10.185185" vertical-offset="2695" max-vertical-offset="14292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="31" selection-start="2561" selection-end="2561" vertical-scroll-proportion="390.81482" vertical-offset="11668" max-vertical-offset="12276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="76" selection-start="3968" selection-end="3968" vertical-scroll-proportion="-2.017857" vertical-offset="2083" max-vertical-offset="8298">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/BaseDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="188" selection-end="188" vertical-scroll-proportion="0.23247233" vertical-offset="0" max-vertical-offset="542">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dao/PostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="49" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="718" max-vertical-offset="1260">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/BaseVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="51" selection-start="388" selection-end="408" vertical-scroll-proportion="0.36531365" vertical-offset="0" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/enums/LoginType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="65" selection-end="65" vertical-scroll-proportion="0.16605166" vertical-offset="0" max-vertical-offset="542">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/enums/UserEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.1590106" vertical-offset="0" max-vertical-offset="1548">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/enums/PostEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="26" selection-start="182" selection-end="182" vertical-scroll-proportion="0.44522968" vertical-offset="0" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="21" selection-start="3494" selection-end="3494" vertical-scroll-proportion="0.0" vertical-offset="1709" max-vertical-offset="2286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/001_ddl/003_create_post.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="30" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/user/addUser.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="20" selection-start="262" selection-end="408" vertical-scroll-proportion="0.45436892" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/dto/PostDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="161" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1422">
+          <folding>
+            <element signature="e#1033#1034#0" expanded="false" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1115#1116#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
+            <element signature="e#1195#1196#0" expanded="false" />
+            <element signature="e#1229#1230#0" expanded="false" />
+            <element signature="e#1283#1284#0" expanded="false" />
+            <element signature="e#1329#1330#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/artifacts-26/filestore/javax.servlet/servlet-api/2.5/source/21599814ad9a605b86f3e6381571beccd861a32/servlet-api-2.5-sources.jar!/javax/servlet/http/HttpSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="319" column="16" selection-start="9515" selection-end="9515" vertical-scroll-proportion="0.3321033" vertical-offset="5130" max-vertical-offset="7398">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/LoginOutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="31" selection-start="4144" selection-end="4144" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="4392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="55" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/post-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.0" vertical-offset="197" max-vertical-offset="1692">
+          <folding>
+            <marker date="1408285536546" expanded="true" signature="826:1276" placeholder="INSERT INTO ..." />
+            <marker date="1408285536546" expanded="true" signature="1349:1792" placeholder="UPDATE T_POS..." />
+            <marker date="1408285536546" expanded="true" signature="1890:1948" placeholder="..." />
+            <marker date="1408285536546" expanded="true" signature="1900:1935" placeholder="SELECT * FRO..T_POST..." />
+            <marker date="1408285536546" expanded="true" signature="2033:2060" placeholder="SELECT COUNT..T_POST..." />
+            <marker date="1408285536546" expanded="true" signature="2194:2214" placeholder="SELECT * FRO..T_POST..." />
+            <marker date="1408285536546" expanded="true" signature="2595:2652" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/list.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="518">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/LoginOutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="77" selection-start="1167" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="1224">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/user/showUser.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="39" selection-start="1141" selection-end="1176" vertical-scroll-proportion="-27.11111" vertical-offset="24" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/user/loginSuccess.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="15" selection-start="431" selection-end="434" vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/UserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.2862191" vertical-offset="774" max-vertical-offset="2844">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/velocitly/post/edit.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="76" selection-start="4040" selection-end="4040" vertical-scroll-proportion="-10.148149" vertical-offset="1436" max-vertical-offset="3222">
+          <folding>
+            <marker date="1408286645725" expanded="false" signature="4697:4711" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="1161" selection-end="1161" vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1710">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/view/vo/PostVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="1566">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mytime/model/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="27" selection-start="3103" selection-end="3103" vertical-scroll-proportion="0.51606804" vertical-offset="1545" max-vertical-offset="2304">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3423#3431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

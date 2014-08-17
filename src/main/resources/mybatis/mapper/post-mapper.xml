@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Post">
+
+    <resultMap id="PostMap" type="PostDTO">
+        <id property="id" column="ID"/>
+        <result property="userId" column="USER_ID"/>
+        <result property="userName" column="USER_NAME"/>
+        <result property="userIp" column="USER_IP"/>
+        <result property="postTitle" column="POST_TITLE"/>
+        <result property="postContent" column="POST_CONTENT"/>
+        <result property="status" column="STATUS"/>
+        <result property="createAt" column="CREATE_AT"/>
+        <result property="updateAt" column="UPDATE_AT"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="PostDTO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO T_POST
+        (
+            USER_ID,
+            USER_NAME,
+            USER_IP,
+            POST_TITLE,
+            POST_CONTENT,
+            STATUS,
+            CREATE_AT,
+            UPDATE_AT
+        )
+        VALUES
+        (
+            #{userId},
+            #{userName},
+            #{userIp},
+            #{postTitle},
+            #{postContent},
+            #{status},
+            #{createAt},
+            #{updateAt}
+        )
+    </insert>
+
+    <update id="update" parameterType="PostDTO">
+        UPDATE T_POST
+        <set>
+            <if test="postTitle != null and postTitle != '' ">
+                POST_TITLE = #{postTitle},
+            </if>
+            <if test="postContent != null and postContent != '' ">
+                POST_CONTENT = #{postContent},
+            </if>
+            <if test="updateAt != null and updateAt != '' ">
+                UPDATE_AT = #{updateAt},
+            </if>
+        </set>
+        where ID = #{id}
+    </update>
+
+    <select id="selectById" parameterType="Long" resultMap="PostMap" fetchSize="1">
+        SELECT * FROM T_POST WHERE ID=#{id}
+    </select>
+
+    <select id="countByCnd" parameterType="PostDTO" resultType="Integer">
+        SELECT COUNT(*) FROM T_POST
+        <include refid="cndRefId"/>
+    </select>
+
+    <select id="selectByCnd" parameterType="PostDTO" resultMap="PostMap">
+        SELECT * FROM T_POST
+        <include refid="cndRefId"/>
+    </select>
+
+    <sql id="cndRefId">
+        <where>
+            <if test="userId != null and userId != '' ">
+                USER_ID = #{userId}
+            </if>
+            <if test="userName != null and userName != '' ">
+                AND USER_NAME = #{userName}
+            </if>
+            <if test="status != null and status != '' ">
+                AND STATUS = #{status}
+            </if>
+        </where>
+    </sql>
+
+</mapper>
+
+

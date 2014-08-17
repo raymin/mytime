@@ -116,7 +116,7 @@ public class LoginOutService {
         }
 
         UserVO userVo = new UserVO(userDto);
-        boolean isCreated = createSessionAndCookie(request,response, userVo);
+        boolean isCreated = createSessionAndCookie(request, response, userVo);
         if(isCreated){
             userVo.setRetCode(UserVO.RET_CODE_SUCCESS);
             userVo.setRetMsg("登录成功");
