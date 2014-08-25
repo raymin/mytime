@@ -31,7 +31,7 @@ public class PostService {
 
         //输入check
         //日志标题不能为空
-        if (MyString.isBlank(postDTO.getPostTitle())) {
+        if (MyString.isBlank(postDTO.getTitle())) {
             PostVO postVO = new PostVO();
             postVO.setRetCode(UserVO.RET_CODE_CHECK_ERROR);
             postVO.setRetErrorMap(MapUtil.buildMap("post.title", "日志标题不能为空"));
@@ -39,7 +39,7 @@ public class PostService {
         }
 
         //日志内容不能为空
-        if (MyString.isBlank(postDTO.getPostContent())) {
+        if (MyString.isBlank(postDTO.getContent())) {
             PostVO postVO = new PostVO();
             postVO.setRetCode(UserVO.RET_CODE_CHECK_ERROR);
             postVO.setRetErrorMap(MapUtil.buildMap("post.content", "日志内容不能为空"));
@@ -63,11 +63,11 @@ public class PostService {
             Date nowDate = new Date();
             if(postDTO.getId() != null){
                 retMsg = "更新日志成功";
-                postDTO.setUpdateAt(nowDate);
+                postDTO.setUpdatedAt(nowDate);
                 postDao.update(postDTO);
             } else {
-                postDTO.setCreateAt(nowDate);
-                postDTO.setUpdateAt(nowDate);
+                postDTO.setCreatedAt(nowDate);
+                postDTO.setUpdatedAt(nowDate);
                 postDao.insert(postDTO);
             }
         } catch (Exception e){

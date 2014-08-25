@@ -71,14 +71,6 @@ public class UserService {
             return userVo;
         }
 
-        if (userDto.getName() != null) {
-            userDto.setNameDisp(userDto.getName());
-        }
-
-        if (userDto.getEmail() != null) {
-            userDto.setEmailDisp(userDto.getEmail());
-        }
-
         //加密密码
         userDto.setPwd(CipherUtil.generatePassword(userDto.getPwd()));
         userDto.setCreatedAt(new Date());

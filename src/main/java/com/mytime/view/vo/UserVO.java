@@ -56,10 +56,8 @@ public class UserVO extends BaseVO {
     public UserVO(UserDTO userDto) {
         this.id = userDto.getId();
         this.name = userDto.getName();
-        this.nameDisp = userDto.getNameDisp();
         this.nickName = userDto.getNickName();
         this.mobile = userDto.getMobile();
-        this.emailDisp = userDto.getEmailDisp();
         this.lastLoginTime = userDto.getLastLoginTime();
         this.picUrl = userDto.getPicUrl();
         this.sex = userDto.getSex();

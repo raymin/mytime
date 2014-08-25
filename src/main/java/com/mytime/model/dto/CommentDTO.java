@@ -2,34 +2,32 @@ package com.mytime.model.dto;
 
 import java.util.Date;
 
-public class PostDTO extends BaseDTO {
+public class CommentDTO extends BaseDTO {
 
     // 对应数据库表主键
     private Long id;
+    //
+    private Long postId;
     // 用户ID
     private Long userId;
     // 用户名
     private String userName;
+    // 用户邮箱
+    private String userEmail;
+    // 用户URL
+    private String userUrl;
     // 用户IP
     private String userIp;
     // 用户USER AGENT
     private String userAgent;
-    // MIME类型
-    private String mimeType;
-    // 文章类型（post/page等）
+    // 评论类型(pingback/普通)
     private String type;
-    // 日志标题
-    private String title;
-    // 日志摘录
-    private String excerpt;
     // 日志内容
     private String content;
     // 日志状态
     private String status;
-    // 评论状态（open/closed）
-    private String commentStatus;
-    // 评论总数
-    private String commentCnt;
+    // 父ID
+    private String parentId;
     // 创建时间
     private Date createdAt;
     // 创建人
@@ -45,6 +43,14 @@ public class PostDTO extends BaseDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
     }
 
     public Long getUserId() {
@@ -63,6 +69,22 @@ public class PostDTO extends BaseDTO {
         this.userName = userName;
     }
 
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserUrl() {
+        return userUrl;
+    }
+
+    public void setUserUrl(String userUrl) {
+        this.userUrl = userUrl;
+    }
+
     public String getUserIp() {
         return userIp;
     }
@@ -79,36 +101,12 @@ public class PostDTO extends BaseDTO {
         this.userAgent = userAgent;
     }
 
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    public void setMimeType(String mimeType) {
-        this.mimeType = mimeType;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getExcerpt() {
-        return excerpt;
-    }
-
-    public void setExcerpt(String excerpt) {
-        this.excerpt = excerpt;
     }
 
     public String getContent() {
@@ -127,20 +125,12 @@ public class PostDTO extends BaseDTO {
         this.status = status;
     }
 
-    public String getCommentStatus() {
-        return commentStatus;
+    public String getParentId() {
+        return parentId;
     }
 
-    public void setCommentStatus(String commentStatus) {
-        this.commentStatus = commentStatus;
-    }
-
-    public String getCommentCnt() {
-        return commentCnt;
-    }
-
-    public void setCommentCnt(String commentCnt) {
-        this.commentCnt = commentCnt;
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
     }
 
     public Date getCreatedAt() {

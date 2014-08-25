@@ -37,8 +37,7 @@ public class UserController {
      */
     @RequestMapping(value = "/register.do", method = RequestMethod.POST)
     public ModelAndView register(@ModelAttribute("registerUser") UserDTO userDto, HttpServletRequest request) throws Exception {
-        String customerIp = WebUtil.getRemoteIp(request);
-        userDto.setCustomerIp(customerIp);
+        userDto.setUserIp(WebUtil.getRemoteIp(request));
         UserVO userVo = userService.addUser(userDto);
 
         if(!UserVO.RET_CODE_SUCCESS.equals(userVo.getRetCode())){

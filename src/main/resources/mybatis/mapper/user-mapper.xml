@@ -9,7 +9,6 @@
         <result property="nickName" column="NICK_NAME"/>
         <result property="mobile" column="MOBILE"/>
         <result property="email" column="EMAIL"/>
-        <result property="emailDisp" column="EMAIL_DISP"/>
         <result property="pwd" column="PWD"/>
         <result property="type" column="TYPE"/>
         <result property="src" column="SRC"/>
@@ -18,8 +17,7 @@
         <result property="birthday" column="BIRTHDAY"/>
         <result property="picUrl" column="PIC_URL"/>
         <result property="lastLoginTime" column="LAST_LOGIN_TIME"/>
-        <result property="customerIp" column="CUSTOMER_IP"/>
-        <result property="clientIp" column="CLIENT_IP"/>
+        <result property="userIp" column="USER_IP"/>
         <result property="createdAt" column="CREATED_AT"/>
         <result property="createdBy" column="CREATED_BY"/>
         <result property="updatedAt" column="UPDATED_AT"/>
@@ -30,11 +28,9 @@
         INSERT INTO T_USER
         (
             NAME,
-            NAME_DISP,
             NICK_NAME,
             MOBILE,
             EMAIL,
-            EMAIL_DISP,
             PWD,
             TYPE,
             SRC,
@@ -43,19 +39,18 @@
             BIRTHDAY,
             PIC_URL,
             LAST_LOGIN_TIME,
-            CUSTOMER_IP,
-            CLIENT_IP,
+            USER_IP,
             CREATED_AT,
-            CREATED_BY
+            CREATED_BY,
+            UPDATED_AT,
+            UPDATED_BY
         )
         VALUES
         (
             #{name},
-            #{nameDisp},
             #{nickName},
             #{mobile},
             #{email},
-            #{emailDisp},
             #{pwd},
             #{type},
             #{src},
@@ -64,10 +59,11 @@
             #{birthday},
             #{picUrl},
             #{lastLoginTime},
-            #{customerIp},
-            #{clientIp},
+            #{userIp},
             #{createdAt},
-            #{createdBy}
+            #{createdBy},
+            #{updatedAt},
+            #{updatedBy}
         )
     </insert>
 
@@ -77,9 +73,6 @@
             <if test="name != null and name != '' ">
                 NAME = #{name},
             </if>
-            <if test="nameDisp != null and nameDisp != '' ">
-                NAME_DISP = #{nameDisp},
-            </if>
             <if test="nickName != null and nickName != '' ">
                 NICK_NAME = #{nickName},
             </if>
@@ -88,9 +81,6 @@
             </if>
             <if test="email != null and email != '' ">
                 EMAIL = #{email},
-            </if>
-            <if test="emailDisp != null and emailDisp != '' ">
-                EMAIL_DISP = #{emailDisp},
             </if>
             <if test="pwd != null and pwd != '' ">
                 PWD = #{pwd},
@@ -116,11 +106,8 @@
             <if test="lastLoginTime != null and lastLoginTime != '' ">
                 LAST_LOGIN_TIME = #{lastLoginTime},
             </if>
-            <if test="customerIp != null and customerIp != '' ">
-                CUSTOMER_IP = #{customerIp},
-            </if>
-            <if test="clientIp != null and clientIp != '' ">
-                CLIENT_IP = #{clientIp},
+            <if test="userIp != null and userIp != '' ">
+                USER_IP = #{userIp},
             </if>
             UPDATED_AT = #{updatedAt},
             UPDATED_BY = #{updatedBy}

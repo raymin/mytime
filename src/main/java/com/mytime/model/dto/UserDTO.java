@@ -8,16 +8,12 @@ public class UserDTO extends BaseDTO {
     private Long id;
     // 用户名
     private String name;
-    // 用户名(保存用户原始输入，页面显示用)
-    private String nameDisp;
     // 用户昵称
     private String nickName;
     // 手机号码
     private String mobile;
     // 电子邮箱
     private String email;
-    // 电子邮箱(保存用户原始输入，页面显示用)
-    private String emailDisp;
     // 密码
     private String pwd;
     // 用户类型
@@ -35,7 +31,7 @@ public class UserDTO extends BaseDTO {
     // 上次登录时间
     private Date lastLoginTime;
     // 用户的IP（客户端请求IP）
-    private String customerIp;
+    private String userIp;
     // 程序调用端IP
     private String clientIp;
     // 创建时间
@@ -63,14 +59,6 @@ public class UserDTO extends BaseDTO {
         this.name = name;
     }
 
-    public String getNameDisp() {
-        return nameDisp;
-    }
-
-    public void setNameDisp(String nameDisp) {
-        this.nameDisp = nameDisp;
-    }
-
     public String getNickName() {
         return nickName;
     }
@@ -93,14 +81,6 @@ public class UserDTO extends BaseDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getEmailDisp() {
-        return emailDisp;
-    }
-
-    public void setEmailDisp(String emailDisp) {
-        this.emailDisp = emailDisp;
     }
 
     public String getPwd() {
@@ -167,12 +147,12 @@ public class UserDTO extends BaseDTO {
         this.lastLoginTime = lastLoginTime;
     }
 
-    public String getCustomerIp() {
-        return customerIp;
+    public String getUserIp() {
+        return userIp;
     }
 
-    public void setCustomerIp(String customerIp) {
-        this.customerIp = customerIp;
+    public void setUserIp(String userIp) {
+        this.userIp = userIp;
     }
 
     public String getClientIp() {

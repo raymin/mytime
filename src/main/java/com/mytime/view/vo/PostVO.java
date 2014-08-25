@@ -35,11 +35,11 @@ public class PostVO extends BaseVO {
             this.userId = postDTO.getUserId();
             this.userName = postDTO.getUserName();
             this.userIp = postDTO.getUserIp();
-            this.postTitle = postDTO.getPostTitle();
-            this.postContent = postDTO.getPostContent();
+            this.postTitle = postDTO.getTitle();
+            this.postContent = postDTO.getContent();
             this.status = postDTO.getStatus();
-            this.createAt = postDTO.getCreateAt();
-            this.updateAt = postDTO.getUpdateAt();
+            this.createAt = postDTO.getCreatedAt();
+            this.updateAt = postDTO.getUpdatedAt();
         }
     }
 
